@@ -1,0 +1,3956 @@
+<!-- Hero Section ایران اِفیکس -->
+<header class="fx-hero-main fx-header-curved" id="fx-home">
+    <div class="fx-hero-inner-wrap">
+        <div class="fx-hero-image-wrapper fx-fade-anim">
+            <img src="https://iranfxapp.ir/wp-content/uploads/2026/06/iranfxbaner.jpg" alt="ایران اِفیکس" class="fx-app-screenshot-full" width="1080" height="1920" loading="lazy" />
+        </div>
+        <div class="fx-hero-text-content fx-fade-anim" id="fx-hero-text-content">
+            <div class="fx-hero-badge-custom">
+                <img src="https://iranfxapp.ir/wp-content/uploads/2026/06/delta1-1.png" alt="لوگو" class="fx-badge-logo" id="fx-badge-logo" width="24" height="24">
+                <span class="fx-badge-custom-text" id="fx-badge-text">سامانه دلتا افیکس</span>
+            </div>
+            <h1 class="fx-hero-main-title" id="fx-hero-title">دستیار هوشمند <span class="fx-hero-title-highlight">فارکس</span></h1>
+            <p class="fx-hero-main-desc" id="fx-hero-desc">سامانه پیشرفته رصد و تحلیل بازار فارکس با ابزارهای حرفه‌ای و داده‌های به‌روز</p>
+            <div class="fx-hero-buttons-wrap">
+                <a class="fx-main-btn fx-btn-download-primary" id="fx-download-btn" href="https://iranfxapp.ir/dlapp/">
+                    <svg class="fx-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    <span>دانلود اپلیکیشن</span>
+                </a>
+                <a class="fx-main-btn fx-btn-system-login" id="fx-system-login-btn" href="https://iranfxapp.ir/trade-forex/index.html">
+                    <svg class="fx-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                        <polyline points="10 17 15 12 10 7"/>
+                        <line x1="15" y1="12" x2="3" y2="12"/>
+                    </svg>
+                    <span>ورود به سامانه</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style>
+    .fx-hero-main,
+    .fx-hero-badge-custom,
+    .fx-hero-main-title,
+    .fx-hero-main-desc,
+    .fx-main-btn {
+        font-family: 'IranSans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .fx-hero-main {
+        background: linear-gradient(135deg, #1a2a6c 0%, #2c3e50 100%);
+        color: white;
+        padding: 80px 20px 120px;
+        position: relative;
+        overflow: hidden;
+    }
+    .fx-header-curved {
+        position: relative;
+    }
+    .fx-header-curved::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100"><path fill="%23f8f9fa" d="M0,32L48,42.7C96,53,192,75,288,74.7C384,75,480,53,576,48C672,43,768,53,864,53.3C960,53,1056,43,1152,42.7C1248,43,1344,53,1392,58.7L1440,64L1440,100L1392,100C1344,100,1248,100,1152,100C1056,100,960,100,864,100C768,100,672,100,576,100C480,100,384,100,288,100C192,100,96,100,48,100L0,100Z"></path></svg>') no-repeat center bottom;
+        background-size: cover;
+        pointer-events: none;
+    }
+    .fx-hero-inner-wrap {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+    }
+    .fx-hero-text-content {
+        text-align: right;
+        position: relative;
+        z-index: 3;
+    }
+    .fx-hero-badge-custom {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 10px 20px;
+        border-radius: 50px;
+        margin-bottom: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.5s ease;
+    }
+    .fx-badge-logo {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        border-radius: 4px;
+    }
+    .fx-icon {
+        display: inline-block;
+        vertical-align: middle;
+        flex-shrink: 0;
+    }
+    .fx-badge-custom-text {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: all 0.5s ease;
+    }
+    .fx-hero-main-title {
+        font-size: 48px;
+        font-weight: 800;
+        line-height: 1.3;
+        margin-bottom: 20px;
+        background: linear-gradient(to right, #ffffff, #ffd700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: all 0.5s ease;
+    }
+    .fx-hero-title-highlight {
+        -webkit-text-fill-color: #ffd700;
+        background: none;
+        transition: all 0.5s ease;
+    }
+    .fx-hero-main-desc {
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 40px;
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 500px;
+        transition: all 0.5s ease;
+    }
+    .fx-hero-buttons-wrap {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .fx-main-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px 30px;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: all 0.5s ease;
+        border: 2px solid transparent;
+        cursor: pointer;
+    }
+    .fx-btn-download-primary {
+        color: #fff !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .fx-btn-download-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    .fx-btn-system-login {
+        background: transparent;
+        color: white !important;
+        transition: all 0.5s ease;
+    }
+    .fx-btn-system-login:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-3px);
+    }
+    .fx-hero-image-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        padding-bottom: 40px;
+    }
+    .fx-app-screenshot-full {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+        border-radius: 20px;
+    }
+    .fx-fade-anim {
+        opacity: 0;
+        animation: fxHeroFadeIn 0.8s ease forwards;
+    }
+    @keyframes fxHeroFadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 1100px) {
+        .fx-hero-inner-wrap {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        .fx-hero-text-content {
+            text-align: center;
+            order: 1;
+        }
+        .fx-hero-image-wrapper {
+            order: 2;
+            padding-bottom: 50px;
+        }
+        .fx-hero-main-desc {
+            margin: 0 auto 40px;
+            max-width: 600px;
+        }
+        .fx-hero-buttons-wrap {
+            justify-content: center;
+        }
+        .fx-hero-main-title {
+            font-size: 40px;
+        }
+        .fx-app-screenshot-full {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    }
+    @media (max-width: 768px) {
+        .fx-hero-main {
+            padding: 60px 20px 110px;
+        }
+        .fx-hero-main-title {
+            font-size: 32px;
+        }
+        .fx-hero-main-desc {
+            font-size: 16px;
+        }
+        .fx-hero-buttons-wrap {
+            flex-direction: column;
+            align-items: center;
+        }
+        .fx-main-btn {
+            width: 100%;
+            max-width: 280px;
+            justify-content: center;
+        }
+        .fx-app-screenshot-full {
+            max-width: 320px;
+        }
+        .fx-hero-image-wrapper {
+            padding-bottom: 50px;
+        }
+    }
+    @media (max-width: 480px) {
+        .fx-hero-main-title {
+            font-size: 28px;
+        }
+        .fx-hero-badge-custom {
+            padding: 8px 16px;
+        }
+        .fx-badge-custom-text {
+            font-size: 14px;
+        }
+        .fx-app-screenshot-full {
+            max-width: 260px;
+        }
+        .fx-hero-image-wrapper {
+            padding-bottom: 60px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeElements = document.querySelectorAll('.fx-fade-anim');
+        fadeElements.forEach((el, index) => {
+            el.style.animationDelay = (index * 0.15) + 's';
+        });
+
+        const systemsData = [
+            {
+                badge: 'سامانه دلتا افیکس',
+                logo: 'https://iranfxapp.ir/wp-content/uploads/2026/06/delta1-1.png',
+                title: 'دستیار هوشمند <span class="fx-hero-title-highlight">فارکس</span>',
+                desc: 'سامانه پیشرفته رصد و تحلیل بازار فارکس با ابزارهای حرفه‌ای و داده‌های به‌روز',
+                link: 'https://iranfxapp.ir/trade-forex/index.html',
+                color: '#ad52e7'
+            },
+            {
+                badge: 'سامانه کوین افیکس',
+                logo: 'https://iranfxapp.ir/wp-content/uploads/2026/06/coinfx.png',
+                title: 'دستیار هوشمند <span class="fx-hero-title-highlight">ارز دیجیتال</span>',
+                desc: 'سامانه جامع پایش و تحلیل بازار ارزهای دیجیتال با نمودارهای زنده و اطلاعات لحظه‌ای',
+                link: 'https://iranfxapp.ir/trade-crypto/trade.html',
+                color: '#7dbf6b'
+            },
+            {
+                badge: 'سامانه گلد افیکس',
+                logo: 'https://iranfxapp.ir/wp-content/uploads/2026/06/goldfxx.png',
+                title: 'دستیار هوشمند <span class="fx-hero-title-highlight">طلای آب شده</span>',
+                desc: 'سامانه تخصصی رصد و تحلیل بازار طلای آب شده با قیمت‌های لحظه‌ای و نمودارهای پیشرفته',
+                link: 'https://iranfxapp.ir/trade-gold/trade.html',
+                color: '#c07c20'
+            }
+        ];
+
+        const badgeText = document.getElementById('fx-badge-text');
+        const badgeLogo = document.getElementById('fx-badge-logo');
+        const heroTitle = document.getElementById('fx-hero-title');
+        const heroDesc = document.getElementById('fx-hero-desc');
+        const downloadBtn = document.getElementById('fx-download-btn');
+        const loginBtn = document.getElementById('fx-system-login-btn');
+        let currentSlide = 0;
+        const totalSlides = systemsData.length;
+        let sliderInterval;
+
+        function applySystem(index) {
+            currentSlide = index;
+            const data = systemsData[index];
+
+            badgeLogo.src = data.logo;
+            badgeText.textContent = data.badge;
+
+            heroTitle.innerHTML = data.title;
+            heroTitle.style.background = `linear-gradient(to right, #ffffff, ${data.color})`;
+            heroTitle.style.webkitBackgroundClip = 'text';
+            heroTitle.style.webkitTextFillColor = 'transparent';
+            heroTitle.style.backgroundClip = 'text';
+
+            const highlight = heroTitle.querySelector('.fx-hero-title-highlight');
+            if (highlight) {
+                highlight.style.color = data.color;
+                highlight.style.webkitTextFillColor = data.color;
+            }
+
+            heroDesc.textContent = data.desc;
+
+            downloadBtn.style.backgroundColor = data.color;
+
+            loginBtn.href = data.link;
+            loginBtn.style.borderColor = data.color;
+            loginBtn.style.color = data.color;
+
+            loginBtn.onmouseenter = function() {
+                this.style.backgroundColor = data.color + '20';
+                this.style.borderColor = data.color;
+            };
+            loginBtn.onmouseleave = function() {
+                this.style.backgroundColor = 'transparent';
+                this.style.borderColor = data.color;
+            };
+        }
+
+        function nextSlide() {
+            applySystem((currentSlide + 1) % totalSlides);
+        }
+
+        function startSlider() {
+            sliderInterval = setInterval(nextSlide, 4000);
+        }
+
+        applySystem(0);
+        startSlider();
+    });
+  <!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>داستان ایران افیکس</title>
+    <style>
+        /* ========== ریست و تنظیمات پایه ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'IranSans', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            direction: rtl;
+        }
+
+        /* ========== بخش کارت‌ها ========== */
+        .iw-widget-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .iw-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .iw-section-head {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .iw-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        .iw-section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1a2a6c;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            background: linear-gradient(to right, #1a2a6c, #2c3e50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .iw-section-desc {
+            font-size: 18px;
+            color: #64748B;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ========== کارت‌ها ========== */
+        .iw-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .iw-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 35px;
+            border: 1px solid rgba(26, 42, 108, 0.1);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: iw-fadeInUp 0.8s ease forwards;
+        }
+        @keyframes iw-fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .iw-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a2a6c, #ffd700);
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .iw-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(26, 42, 108, 0.15);
+            border-color: rgba(26, 42, 108, 0.2);
+        }
+        .iw-card:hover::before {
+            opacity: 1;
+        }
+        .iw-card-icon {
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(26, 42, 108, 0.1), rgba(255, 215, 0, 0.1));
+            border-radius: 18px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        .iw-card:hover .iw-card-icon {
+            background: linear-gradient(135deg, rgba(26, 42, 108, 0.2), rgba(255, 215, 0, 0.2));
+            transform: scale(1.05);
+        }
+        /* استایل برای آیکون‌های SVG */
+        .iw-icon {
+            width: 30px;
+            height: 30px;
+            stroke: #1a2a6c;
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: stroke 0.3s ease;
+        }
+        .iw-card:hover .iw-icon {
+            stroke: #ffd700;
+        }
+        .iw-card-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a2a6c;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .iw-card-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .iw-card-title a:hover {
+            color: #ffd700;
+        }
+        .iw-card-desc {
+            color: #64748B;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        .iw-card-actions {
+            display: flex;
+            gap: 15px;
+        }
+        .iw-btn-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #1a2a6c, #2c3e50);
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 42, 108, 0.2);
+        }
+        .iw-btn-live:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(26, 42, 108, 0.3);
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            color: #1a2a6c;
+        }
+        .iw-btn-live:hover .iw-icon {
+            stroke: #1a2a6c;
+        }
+        .iw-btn-live .iw-icon {
+            stroke: white;
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ========== ریسپانسیو ========== */
+        @media (max-width: 992px) {
+            .iw-section-title {
+                font-size: 36px;
+            }
+            .iw-section-desc {
+                font-size: 16px;
+            }
+        }
+        @media (max-width: 768px) {
+            .iw-widget-section {
+                padding: 60px 0;
+            }
+            .iw-section-head {
+                margin-bottom: 40px;
+            }
+            .iw-section-title {
+                font-size: 30px;
+            }
+            .iw-badge {
+                font-size: 14px;
+                padding: 6px 20px;
+            }
+            .iw-cards {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .iw-card {
+                padding: 30px 25px;
+            }
+            .iw-card-icon {
+                width: 55px;
+                height: 55px;
+            }
+            .iw-icon {
+                width: 26px;
+                height: 26px;
+            }
+            .iw-card-title {
+                font-size: 20px;
+            }
+            .iw-card-desc {
+                font-size: 15px;
+            }
+            .iw-card-actions {
+                flex-direction: column;
+            }
+            .iw-btn-live {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .iw-section-title {
+                font-size: 26px;
+            }
+            .iw-section-desc {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+            .iw-card {
+                padding: 25px 20px;
+            }
+            .iw-card-icon {
+                width: 50px;
+                height: 50px;
+            }
+            .iw-icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="iw-widget-section" dir="rtl">
+    <div class="iw-container">
+        <div class="iw-section-head">
+            <div class="iw-badge">
+                <!-- آیکون SVG fire - شعله -->
+                <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                </svg>
+                <span>انتخاب هوشمند</span>
+            </div>
+            <h2 class="iw-section-title">چرا ایران افیکس را انتخاب کنید؟</h2>
+            <p class="iw-section-desc">
+                با تجربه‌ای غنی در بازارهای مالی جهانی، ما مأموریتی روشن داریم: دموکراتیک کردن دسترسی به ابزارهای حرفه‌ای معاملاتی برای همه معامله‌گران ایرانی. 
+                <strong>بنابراین</strong>، پلتفرم جامع ما با اپلیکیشن موبایل، ربات‌های هوشمند، سیگنال‌های دقیق و پشتیبانی ۲۴ ساعته طراحی شده است.
+            </p>
+        </div>
+
+        <div class="iw-cards">
+            <!-- کارت ۱: تأسیس مجموعه - آیکون building (ساختمان/شرکت) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">تأسیس مجموعه</a>
+                </h3>
+                <p class="iw-card-desc">
+                    ایران افیکس در سال ۱۳۹۹ با چشم‌اندازی روشن برای تحول در بازار مالی ایران تأسیس شد. از ابتدا به دنبال ایجاد تحولی اساسی در نحوه معامله‌گری بودیم.
+                </p>
+                <div class="iw-card-actions">
+                    <a class="iw-btn-live" href="#">
+                        <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <span>بیشتر بدانید</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- کارت ۲: هدف اصلی - آیکون target (هدف) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="6"/>
+                        <circle cx="12" cy="12" r="2"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">هدف اصلی</a>
+                </h3>
+                <p class="iw-card-desc">
+                    ارائه خدمات نوین و پیشرفته به معامله‌گران ایرانی؛ با باور اینکه هر معامله‌گری شایسته بهترین ابزارها و فناوری‌های روز دنیاست.
+                </p>
+                <div class="iw-card-actions">
+                    <a class="iw-btn-live" href="#">
+                        <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <span>بیشتر بدانید</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- کارت ۳: تخصص در بازارهای مالی - آیکون trending-up (روند صعودی) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                        <polyline points="17 6 23 6 23 12"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">تخصص در بازارهای مالی</a>
+                </h3>
+                <p class="iw-card-desc">
+                    تیم ما با تجربه در بازارهای جهانی، تخصصی عمیق در تحلیل و پیش‌بینی روندها دارد و این اساس تمام خدمات ماست.
+                </p>
+                <div class="iw-card-actions">
+                    <a class="iw-btn-live" href="#">
+                        <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <span>بیشتر بدانید</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- کارت ۴: ماموریت ما - آیکون flag (پرچم) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+                        <line x1="4" y1="22" x2="4" y2="15"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">ماموریت ما</a>
+                </h3>
+                <p class="iw-card-desc">
+                    هدف ما دموکراتیک کردن دسترسی به ابزارهای حرفه‌ای است تا موفقیت مالی برای همه در دسترس باشد.
+                </p>
+                <div class="iw-card-actions">
+                    <a class="iw-btn-live" href="#">
+                        <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <span>بیشتر بدانید</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- کارت ۵: پلتفرم جامع - آیکون smart-phone (تلفن هوشمند + اپلیکیشن) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                        <line x1="12" y1="18" x2="12.01" y2="18"/>
+                        <circle cx="12" cy="18" r="1" fill="currentColor" stroke="none"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">پلتفرم جامع</a>
+                </h3>
+                <p class="iw-card-desc">
+                    اپلیکیشن موبایل، ربات‌های معاملاتی هوشمند، سیگنال‌های دقیق و پشتیبانی ۲۴ ساعته را در یک پلتفرم یکپارچه ارائه می‌دهیم.
+                </p>
+                <div class="iw-card-actions">
+                    <a class="iw-btn-live" href="#">
+                        <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <span>بیشتر بدانید</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- کارت ۶: ویجت بازارهای مالی - آیکون layout (قاب/ویجت) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                        <rect x="14" y="3" width="7" height="7" rx="1"/>
+                        <rect x="3" y="14" width="7" height="7" rx="1"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">ویجت بازارهای مالی</a>
+                </h3>
+                <p class="iw-card-desc">
+                    قابلیت جدید ما به کاربران امکان می‌دهد با شورت‌کد، ویجت‌های مالی زنده را در وب‌سایت خود نمایش دهند.
+                </p>
+                <div class="iw-card-actions">
+                    <a class="iw-btn-live" href="#">
+                        <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <span>بیشتر بدانید</span>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<script>
+    // انیمیشن برای المان‌ها
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeElements = document.querySelectorAll('.iw-fade-in');
+        fadeElements.forEach((el, index) => {
+            el.style.animationDelay = (index * 0.1) + 's';
+        });
+        
+        // اضافه کردن ردیاب کلیک برای دکمه‌ها (اختیاری)
+        const btns = document.querySelectorAll('.iw-btn-live');
+        btns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('دکمه بیشتر بدانید کلیک شد');
+                // می‌توانید لینک واقعی را جایگزین کنید
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
+</script>
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>داستان ایران افیکس</title>
+    <style>
+        /* ========== ریست و تنظیمات پایه ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'IranSans', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            direction: rtl;
+        }
+
+        /* ========== بخش کارت‌ها ========== */
+        .iw-widget-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .iw-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .iw-section-head {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .iw-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        .iw-section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1a2a6c;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            background: linear-gradient(to right, #1a2a6c, #2c3e50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .iw-section-desc {
+            font-size: 18px;
+            color: #64748B;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ========== کارت‌ها ========== */
+        .iw-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .iw-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 35px;
+            border: 1px solid rgba(26, 42, 108, 0.1);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: iw-fadeInUp 0.8s ease forwards;
+        }
+        @keyframes iw-fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .iw-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a2a6c, #ffd700);
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .iw-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(26, 42, 108, 0.15);
+            border-color: rgba(26, 42, 108, 0.2);
+        }
+        .iw-card:hover::before {
+            opacity: 1;
+        }
+        .iw-card-icon {
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(26, 42, 108, 0.1), rgba(255, 215, 0, 0.1));
+            border-radius: 18px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        .iw-card:hover .iw-card-icon {
+            background: linear-gradient(135deg, rgba(26, 42, 108, 0.2), rgba(255, 215, 0, 0.2));
+            transform: scale(1.05);
+        }
+        /* استایل برای آیکون‌های SVG */
+        .iw-icon {
+            width: 30px;
+            height: 30px;
+            stroke: #1a2a6c;
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: stroke 0.3s ease;
+        }
+        .iw-card:hover .iw-icon {
+            stroke: #ffd700;
+        }
+        .iw-card-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a2a6c;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .iw-card-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .iw-card-title a:hover {
+            color: #ffd700;
+        }
+        .iw-card-desc {
+            color: #64748B;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        .iw-card-actions {
+            display: flex;
+            gap: 15px;
+        }
+        .iw-btn-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #1a2a6c, #2c3e50);
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 42, 108, 0.2);
+        }
+        .iw-btn-live:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(26, 42, 108, 0.3);
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            color: #1a2a6c;
+        }
+        .iw-btn-live:hover .iw-icon {
+            stroke: #1a2a6c;
+        }
+        .iw-btn-live .iw-icon {
+            stroke: white;
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ========== ریسپانسیو ========== */
+        @media (max-width: 992px) {
+            .iw-section-title {
+                font-size: 36px;
+            }
+            .iw-section-desc {
+                font-size: 16px;
+            }
+        }
+        @media (max-width: 768px) {
+            .iw-widget-section {
+                padding: 60px 0;
+            }
+            .iw-section-head {
+                margin-bottom: 40px;
+            }
+            .iw-section-title {
+                font-size: 30px;
+            }
+            .iw-badge {
+                font-size: 14px;
+                padding: 6px 20px;
+            }
+            .iw-cards {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .iw-card {
+                padding: 30px 25px;
+            }
+            .iw-card-icon {
+                width: 55px;
+                height: 55px;
+            }
+            .iw-icon {
+                width: 26px;
+                height: 26px;
+            }
+            .iw-card-title {
+                font-size: 20px;
+            }
+            .iw-card-desc {
+                font-size: 15px;
+            }
+            .iw-card-actions {
+                flex-direction: column;
+            }
+            .iw-btn-live {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .iw-section-title {
+                font-size: 26px;
+            }
+            .iw-section-desc {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+            .iw-card {
+                padding: 25px 20px;
+            }
+            .iw-card-icon {
+                width: 50px;
+                height: 50px;
+            }
+            .iw-icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="iw-widget-section" dir="rtl">
+    <div class="iw-container">
+        <div class="iw-section-head">
+            <div class="iw-badge">
+                <!-- آیکون SVG fire - شعله -->
+                <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                </svg>
+                <span>انتخاب هوشمند</span>
+            </div>
+            <h2 class="iw-section-title">چرا ایران افیکس را انتخاب کنید؟</h2>
+            <p class="iw-section-desc">
+                با تجربه‌ای غنی در بازارهای مالی جهانی، ما مأموریتی روشن داریم: دموکراتیک کردن دسترسی به ابزارهای حرفه‌ای معاملاتی برای همه معامله‌گران ایرانی. 
+                <strong>بنابراین</strong>، پلتفرم جامع ما با اپلیکیشن موبایل، ربات‌های هوشمند، سیگنال‌های دقیق و پشتیبانی ۲۴ ساعته طراحی شده است.
+            </p>
+        </div>
+
+        <div class="iw-cards">
+            <!-- کارت ۱: تأسیس مجموعه - آیکون building (ساختمان/شرکت) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">تأسیس مجموعه</a>
+                </h3>
+                <p class="iw-card-desc">
+                    ایران افیکس در سال ۱۳۹۹ با چشم‌اندازی روشن برای تحول در بازار مالی ایران تأسیس شد. از ابتدا به دنبال ایجاد تحولی اساسی در نحوه معامله‌گری بودیم.
+                </p>
+                <div class="iw-card-actions">
+                    <a class="iw-btn-live" href="#">
+                        <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <span>بیشتر بدانید</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- کارت ۲: هدف اصلی - آیکون target (هدف) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="6"/>
+                        <circle cx="12" cy="12" r="2"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">هدف اصلی</a>
+                </h3>
+                <p class="iw-card-desc">
+                    ارائه خدمات نوین و پیشرفته به معامله‌گران ایرانی؛ با باور اینکه هر معامله‌گری شایسته بهترین ابزارها و فناوری‌های روز دنیاست.
+                </p>
+                <div class="iw-card-actions">
+                    <a class="iw-btn-live" href="#">
+                        <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <span>بیشتر بدانید</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- کارت ۳: تخصص در بازارهای مالی - آیکون trending-up (روند صعودی) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                        <polyline points="17 6 23 6 23 12"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">تخصص در بازارهای مالی</a>
+                </h3>
+                <p class="iw-card-desc">
+                    تیم ما با تجربه در بازارهای جهانی، تخصصی عمیق در تحلیل و پیش‌بینی روندها دارد و این اساس تمام خدمات ماست.
+                </p>
+                <div class="iw-card-actions">
+                    <a class="iw-btn-live" href="#">
+                        <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <span>بیشتر بدانید</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- کارت ۴: ماموریت ما - آیکون flag (پرچم) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+                        <line x1="4" y1="22" x2="4" y2="15"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">ماموریت ما</a>
+                </h3>
+                <p class="iw-card-desc">
+                    هدف ما دموکراتیک کردن دسترسی به ابزارهای حرفه‌ای است تا موفقیت مالی برای همه در دسترس باشد.
+                </p>
+                <div class="iw-card-actions">
+                    <a class="iw-btn-live" href="#">
+                        <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <span>بیشتر بدانید</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- کارت ۵: پلتفرم جامع - آیکون smart-phone (تلفن هوشمند + اپلیکیشن) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                        <line x1="12" y1="18" x2="12.01" y2="18"/>
+                        <circle cx="12" cy="18" r="1" fill="currentColor" stroke="none"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">پلتفرم جامع</a>
+                </h3>
+                <p class="iw-card-desc">
+                    اپلیکیشن موبایل، ربات‌های معاملاتی هوشمند، سیگنال‌های دقیق و پشتیبانی ۲۴ ساعته را در یک پلتفرم یکپارچه ارائه می‌دهیم.
+                </p>
+                <div class="iw-card-actions">
+                    <a class="iw-btn-live" href="#">
+                        <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <span>بیشتر بدانید</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- کارت ۶: ویجت بازارهای مالی - آیکون layout (قاب/ویجت) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                        <rect x="14" y="3" width="7" height="7" rx="1"/>
+                        <rect x="3" y="14" width="7" height="7" rx="1"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">ویجت بازارهای مالی</a>
+                </h3>
+                <p class="iw-card-desc">
+                    قابلیت جدید ما به کاربران امکان می‌دهد با شورت‌کد، ویجت‌های مالی زنده را در وب‌سایت خود نمایش دهند.
+                </p>
+                <div class="iw-card-actions">
+                    <a class="iw-btn-live" href="#">
+                        <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <span>بیشتر بدانید</span>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<script>
+    // انیمیشن برای المان‌ها
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeElements = document.querySelectorAll('.iw-fade-in');
+        fadeElements.forEach((el, index) => {
+            el.style.animationDelay = (index * 0.1) + 's';
+        });
+        
+        // اضافه کردن ردیاب کلیک برای دکمه‌ها (اختیاری)
+        const btns = document.querySelectorAll('.iw-btn-live');
+        btns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('دکمه بیشتر بدانید کلیک شد');
+                // می‌توانید لینک واقعی را جایگزین کنید
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات تخصصی ایران افیکس</title>
+    <style>
+        /* ========== ریست و تنظیمات پایه ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'IranSans', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            direction: rtl;
+        }
+
+        /* ========== بخش خدمات ========== */
+        .iw-widget-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .iw-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .iw-section-head {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .iw-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        .iw-section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1a2a6c;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            background: linear-gradient(to right, #1a2a6c, #2c3e50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .iw-section-desc {
+            font-size: 18px;
+            color: #64748B;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ========== کارت‌های خدمات ========== */
+        .iw-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .iw-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 35px;
+            border: 1px solid rgba(26, 42, 108, 0.1);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: iw-fadeInUp 0.8s ease forwards;
+        }
+        @keyframes iw-fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .iw-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a2a6c, #ffd700);
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .iw-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(26, 42, 108, 0.15);
+            border-color: rgba(26, 42, 108, 0.2);
+        }
+        .iw-card:hover::before {
+            opacity: 1;
+        }
+        .iw-card-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(26, 42, 108, 0.1), rgba(44, 62, 80, 0.1));
+            border-radius: 16px;
+            margin-bottom: 25px;
+            color: #1a2a6c;
+        }
+        /* استایل برای آیکون‌های SVG */
+        .iw-icon {
+            width: 28px;
+            height: 28px;
+        }
+        .iw-card-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a2a6c;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .iw-card-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .iw-card-title a:hover {
+            color: #ffd700;
+        }
+        .iw-card-desc {
+            color: #64748B;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* ========== ریسپانسیو ========== */
+        @media (max-width: 992px) {
+            .iw-section-title {
+                font-size: 36px;
+            }
+            .iw-section-desc {
+                font-size: 16px;
+            }
+        }
+        @media (max-width: 768px) {
+            .iw-widget-section {
+                padding: 60px 0;
+            }
+            .iw-section-head {
+                margin-bottom: 40px;
+            }
+            .iw-section-title {
+                font-size: 30px;
+            }
+            .iw-badge {
+                font-size: 14px;
+                padding: 6px 20px;
+            }
+            .iw-cards {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .iw-card {
+                padding: 30px 25px;
+            }
+            .iw-card-icon {
+                width: 50px;
+                height: 50px;
+            }
+            .iw-icon {
+                width: 24px;
+                height: 24px;
+            }
+            .iw-card-title {
+                font-size: 20px;
+            }
+            .iw-card-desc {
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .iw-section-title {
+                font-size: 26px;
+            }
+            .iw-section-desc {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+            .iw-card {
+                padding: 25px 20px;
+            }
+            .iw-card-icon {
+                width: 45px;
+                height: 45px;
+            }
+            .iw-icon {
+                width: 22px;
+                height: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="iw-widget-section" dir="rtl">
+    <div class="iw-container">
+        <div class="iw-section-head">
+            <div class="iw-badge">
+                <!-- آیکون SVG star -->
+                <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                خدمات تخصصی
+            </div>
+            <h2 class="iw-section-title">محصولات ایران افیکس</h2>
+            <p class="iw-section-desc">
+                در ادامه، با خدمات اصلی ایران افیکس آشنا شوید. 
+                <strong>بنابراین</strong>، هر محصول با استانداردهای جهانی طراحی شده و دقت بالایی دارد. 
+                <strong>علاوه بر این</strong>، پشتیبانی ۲۴ ساعته و آموزش‌های تخصصی همراه شماست.
+            </p>
+        </div>
+
+        <div class="iw-cards">
+            <!-- سرویس ۱ -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <!-- آیکون SVG award -->
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="7"/>
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">استانداردهای جهانی</a>
+                </h3>
+                <p class="iw-card-desc">
+                    محصولات ما با رعایت کامل استانداردهای جهانی طراحی شده‌اند تا بالاترین کارایی و امنیت را فراهم کنند.
+                </p>
+            </article>
+
+            <!-- سرویس ۲ -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <!-- آیکون SVG robot -->
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="10" rx="2"/>
+                        <circle cx="12" cy="5" r="2"/>
+                        <path d="M12 7v4"/>
+                        <line x1="8" y1="16" x2="8" y2="16"/>
+                        <line x1="16" y1="16" x2="16" y2="16"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">ربات معاملاتی میکوبات</a>
+                </h3>
+                <p class="iw-card-desc">
+                    ربات سیگنال‌دهی برای فارکس و ارز دیجیتال با دقت ۹۴٪. پشتیبانی از تمامی جفت‌ارزها و تایم‌فریم‌ها.
+                </p>
+            </article>
+
+            <!-- سرویس ۳ -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <!-- آیکون SVG bolt -->
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">ربات تخصصی اروبات</a>
+                </h3>
+                <p class="iw-card-desc">
+                    ربات تخصصی معاملات طلا با دقت ۹۶٪ که با تمرکز روی نماد طلا عملکردی فوق‌العاده ارائه می‌دهد.
+                </p>
+            </article>
+
+            <!-- سرویس ۴ -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <!-- آیکون SVG mobile-screen-button -->
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                        <line x1="12" y1="18" x2="12" y2="18"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">اپلیکیشن موبایل</a>
+                </h3>
+                <p class="iw-card-desc">
+                    اپلیکیشن ایران افیکس رایگان است و شامل تحلیل، سیگنال و پشتیبانی ۲۴ ساعته برای معامله‌گران می‌شود.
+                </p>
+            </article>
+
+            <!-- سرویس ۵ -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <!-- آیکون SVG graduation-cap -->
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c0 2 2 4 4 4s4-2 4-4v-5"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">آموزش و پشتیبانی</a>
+                </h3>
+                <p class="iw-card-desc">
+                    آموزش‌های تخصصی و پشتیبانی ۲۴/۷ به‌صورت رایگان ارائه می‌شوند تا در مسیر موفقیت همراه شما باشیم.
+                </p>
+            </article>
+
+            <!-- سرویس ۶ -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <!-- آیکون SVG comments -->
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        <line x1="8" y1="10" x2="16" y2="10"/>
+                        <line x1="8" y1="14" x2="12" y2="14"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">
+                    <a href="#">تالار گفتگو</a>
+                </h3>
+                <p class="iw-card-desc">
+                    تالار اختصاصی همه کاربران برای تبادل نظر، پرسش و پاسخ و اشتراک‌گذاری استراتژی‌ها — محیطی امن برای بحث و همکاری بین تریدرها.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<script>
+    // انیمیشن برای المان‌ها
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeElements = document.querySelectorAll('.iw-fade-in');
+        fadeElements.forEach((el, index) => {
+            setTimeout(() => {
+                el.style.animationDelay = (index * 0.1) + 's';
+            }, 100);
+        });
+    });
+</script>
+
+</body>
+</html>
+<section id="cta" class="iw-cta-section">
+    <div class="iw-section-container">
+        <div class="iw-cta-box">
+            <div class="iw-cta-badge">
+                <!-- آیکون SVG rocket - نسخه زیباتر -->
+                <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L15 9H21L16 14L18 21L12 17L6 21L8 14L3 9H9L12 2Z"/>
+                </svg>
+                <span>شروع هوشمندانه</span>
+            </div>
+            <h3 class="iw-cta-title">همین حالا شروع کنید</h3>
+            <p class="iw-cta-subtitle">به خانواده بزرگ معامله‌گران ایران افیکس بپیوندید</p>
+            <p class="iw-cta-description">
+                و از خدمات حرفه‌ای ما بهره‌مند شوید. 
+                <strong>به‌ویژه</strong>، اپلیکیشن ما کاملاً رایگان است و تمام امکانات مورد نیاز را در اختیارتان قرار می‌دهد.
+            </p>
+            <div class="iw-cta-actions">
+                <a href="https://iranfxapp.ir/dlapp/" class="iw-btn iw-btn-primary" target="_blank" aria-label="دانلود اپلیکیشن ایران افیکس">
+                    <!-- آیکون SVG download - نسخه زیباتر -->
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    <span>دانلود اپلیکیشن</span>
+                </a>
+                <a href="https://iranfxapp.ir/academy/" class="iw-btn iw-btn-outline" target="_blank">
+                    <!-- آیکون SVG graduation-cap - نسخه زیباتر -->
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                    <span>آموزش رایگان</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* ========== CTA Section - استایل ایران ویجت ========== */
+    .iw-cta-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        font-family: 'IranSans', sans-serif;
+    }
+    
+    .iw-section-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .iw-cta-box {
+        background: linear-gradient(135deg, #1a2a6c 0%, #2c3e50 100%);
+        border-radius: 24px;
+        padding: 60px 80px;
+        text-align: center;
+        color: white;
+        box-shadow: 0 20px 60px rgba(26, 42, 108, 0.3);
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: iw-ctaFadeIn 1s ease forwards;
+    }
+    
+    @keyframes iw-ctaFadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* افکت دایره‌ای در پس‌زمینه */
+    .iw-cta-box::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -30%;
+        width: 300px;
+        height: 300px;
+        background: rgba(255, 215, 0, 0.08);
+        border-radius: 50%;
+        z-index: 1;
+        pointer-events: none;
+    }
+    
+    .iw-cta-box::after {
+        content: '';
+        position: absolute;
+        bottom: -40%;
+        left: -20%;
+        width: 250px;
+        height: 250px;
+        background: rgba(255, 215, 0, 0.12);
+        border-radius: 50%;
+        z-index: 1;
+        pointer-events: none;
+    }
+    
+    .iw-cta-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: #ffd700;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 10px 28px;
+        border-radius: 50px;
+        margin-bottom: 25px;
+        border: 1px solid rgba(255, 215, 0, 0.3);
+        z-index: 2;
+        position: relative;
+        animation: iw-badgePulse 3s infinite ease-in-out;
+    }
+    
+    @keyframes iw-badgePulse {
+        0%, 100% { 
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.2);
+        }
+        50% { 
+            transform: scale(1.03);
+            box-shadow: 0 0 0 8px rgba(255, 215, 0, 0);
+        }
+    }
+    
+    /* استایل برای آیکون‌های SVG */
+    .iw-icon {
+        width: 18px;
+        height: 18px;
+        stroke: currentColor;
+        stroke-width: 2;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: all 0.3s ease;
+    }
+    
+    .iw-cta-badge .iw-icon {
+        stroke: #ffd700;
+    }
+    
+    .iw-cta-title {
+        font-size: 48px;
+        font-weight: 900;
+        margin-bottom: 15px;
+        line-height: 1.2;
+        z-index: 2;
+        position: relative;
+        background: linear-gradient(135deg, #ffd700, #ff8c00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    
+    .iw-cta-subtitle {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        opacity: 0.95;
+        z-index: 2;
+        position: relative;
+        color: rgba(255, 255, 255, 0.92);
+    }
+    
+    .iw-cta-description {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 40px;
+        opacity: 0.9;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.8;
+        z-index: 2;
+        position: relative;
+        color: rgba(255, 255, 255, 0.85);
+    }
+    
+    /* ========== Buttons ========== */
+    .iw-cta-actions {
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        flex-wrap: wrap;
+        z-index: 2;
+        position: relative;
+    }
+    
+    .iw-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 16px 38px;
+        font-size: 17px;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 14px;
+        transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        border: 2px solid transparent;
+        min-width: 220px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* افکت ریپل برای دکمه‌ها */
+    .iw-btn::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.5s, height 0.5s;
+    }
+    
+    .iw-btn:active::after {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .iw-btn-primary {
+        background: linear-gradient(135deg, #ffd700, #ff8c00);
+        color: #1a2a6c;
+        box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+    }
+    
+    .iw-btn-primary:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 35px rgba(255, 215, 0, 0.5);
+        background: linear-gradient(135deg, #ffe44d, #ffa500);
+    }
+    
+    .iw-btn-outline {
+        background: rgba(255, 255, 255, 0.08);
+        color: white;
+        border-color: rgba(255, 215, 0, 0.5);
+        backdrop-filter: blur(5px);
+    }
+    
+    .iw-btn-outline:hover {
+        background: rgba(255, 215, 0, 0.15);
+        border-color: #ffd700;
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .iw-btn-primary .iw-icon,
+    .iw-btn-outline .iw-icon {
+        transition: transform 0.3s ease;
+    }
+    
+    .iw-btn-primary:hover .iw-icon,
+    .iw-btn-outline:hover .iw-icon {
+        transform: translateY(-2px);
+    }
+    
+    /* ========== Responsive ========== */
+    @media (max-width: 992px) {
+        .iw-cta-box {
+            padding: 50px 40px;
+        }
+        
+        .iw-cta-title {
+            font-size: 40px;
+        }
+        
+        .iw-cta-subtitle {
+            font-size: 22px;
+        }
+        
+        .iw-cta-description {
+            font-size: 17px;
+        }
+        
+        .iw-btn {
+            padding: 14px 32px;
+            min-width: 200px;
+            font-size: 16px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .iw-cta-section {
+            padding: 60px 0;
+        }
+        
+        .iw-cta-box {
+            padding: 40px 25px;
+            border-radius: 20px;
+        }
+        
+        .iw-cta-title {
+            font-size: 32px;
+        }
+        
+        .iw-cta-subtitle {
+            font-size: 20px;
+        }
+        
+        .iw-cta-description {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        
+        .iw-cta-actions {
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .iw-btn {
+            width: 100%;
+            max-width: 280px;
+            padding: 14px 25px;
+        }
+        
+        .iw-cta-box::before,
+        .iw-cta-box::after {
+            width: 180px;
+            height: 180px;
+        }
+        
+        .iw-icon {
+            width: 16px;
+            height: 16px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .iw-cta-box {
+            padding: 35px 20px;
+        }
+        
+        .iw-cta-title {
+            font-size: 28px;
+        }
+        
+        .iw-cta-subtitle {
+            font-size: 18px;
+        }
+        
+        .iw-cta-description {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        .iw-cta-badge {
+            font-size: 13px;
+            padding: 7px 20px;
+            gap: 8px;
+        }
+        
+        .iw-btn {
+            padding: 12px 22px;
+            font-size: 14px;
+            gap: 8px;
+        }
+        
+        .iw-icon {
+            width: 14px;
+            height: 14px;
+        }
+        
+        .iw-cta-badge .iw-icon {
+            width: 14px;
+            height: 14px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // افکت دکمه‌ها
+        const buttons = document.querySelectorAll('.iw-btn');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-4px)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // تابع برای دکمه اصلی با بازخورد بصری بهتر
+        const primaryBtn = document.querySelector('.iw-btn-primary');
+        if (primaryBtn) {
+            let originalContent = null;
+            
+            primaryBtn.addEventListener('click', function(e) {
+                // فقط برای بازخورد بصری، بدون جلوگیری از لینک اصلی
+                const svgIcon = this.querySelector('.iw-icon');
+                const spanText = this.querySelector('span');
+                
+                if (svgIcon && !this.hasAttribute('data-clicked')) {
+                    this.setAttribute('data-clicked', 'true');
+                    
+                    // ذخیره محتوای اصلی
+                    const originalSVG = svgIcon.outerHTML;
+                    const originalText = spanText.innerText;
+                    
+                    // تغییر موقت آیکون و متن
+                    svgIcon.outerHTML = `
+                        <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    `;
+                    spanText.innerText = 'در حال انتقال...';
+                    this.style.opacity = '0.9';
+                    
+                    setTimeout(() => {
+                        // بازگرداندن محتوای اصلی بعد از 1.5 ثانیه
+                        if (this.querySelector('.iw-icon')) {
+                            this.querySelector('.iw-icon').outerHTML = originalSVG;
+                            spanText.innerText = originalText;
+                            this.style.opacity = '1';
+                            this.removeAttribute('data-clicked');
+                        }
+                    }, 1500);
+                }
+            });
+        }
+        
+        // انیمیشن ورود برای CTA box
+        const ctaBox = document.querySelector('.iw-cta-box');
+        if (ctaBox) {
+            // اطمینان از اجرای انیمیشن
+            ctaBox.style.animation = 'iw-ctaFadeIn 1s ease forwards';
+        }
+    });
+</script>
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ایران افیکس - مرجع معامله‌گران</title>
+    <style>
+        /* ========== ریست و تنظیمات پایه ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'IranSans', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            direction: rtl;
+        }
+
+        /* ========== بخش مرجع ========== */
+        .iw-widget-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .iw-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .iw-section-head {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .iw-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        .iw-section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1a2a6c;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            background: linear-gradient(to right, #1a2a6c, #2c3e50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .iw-section-desc {
+            font-size: 18px;
+            color: #64748B;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ========== آیتم‌های ویژگی ========== */
+        .iw-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .iw-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 22px;
+            padding: 40px 30px;
+            border: 1px solid rgba(26, 42, 108, 0.1);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: iw-fadeInUp 0.8s ease forwards;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+        }
+        @keyframes iw-fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .iw-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #1a2a6c, #ffd700);
+            opacity: 0.7;
+            transition: opacity 0.3s, height 0.3s;
+        }
+        .iw-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 40px rgba(26, 42, 108, 0.15);
+            border-color: rgba(26, 42, 108, 0.2);
+        }
+        .iw-card:hover::before {
+            opacity: 1;
+            height: 8px;
+        }
+        .iw-card-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(26, 42, 108, 0.1), rgba(255, 215, 0, 0.08));
+            border-radius: 20px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        .iw-card:hover .iw-card-icon {
+            background: linear-gradient(135deg, rgba(26, 42, 108, 0.15), rgba(255, 215, 0, 0.15));
+            transform: scale(1.05);
+        }
+        /* استایل برای آیکون‌های SVG - هماهنگ با کل سایت */
+        .iw-icon {
+            width: 36px;
+            height: 36px;
+            stroke: #1a2a6c;
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: stroke 0.3s ease;
+        }
+        .iw-card:hover .iw-icon {
+            stroke: #ffd700;
+        }
+        .iw-badge .iw-icon {
+            stroke: #ffd700;
+            width: 18px;
+            height: 18px;
+        }
+        .iw-card-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a2a6c;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .iw-card-desc {
+            color: #64748B;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* ========== ریسپانسیو ========== */
+        @media (min-width: 1200px) {
+            .iw-cards {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media (max-width: 1199px) and (min-width: 992px) {
+            .iw-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 991px) {
+            .iw-widget-section {
+                padding: 60px 0;
+            }
+            .iw-section-head {
+                margin-bottom: 40px;
+            }
+            .iw-section-title {
+                font-size: 36px;
+            }
+            .iw-badge {
+                font-size: 14px;
+                padding: 6px 20px;
+            }
+            .iw-cards {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .iw-card {
+                padding: 35px 25px;
+                min-height: 280px;
+            }
+            .iw-card-icon {
+                width: 70px;
+                height: 70px;
+            }
+            .iw-icon {
+                width: 32px;
+                height: 32px;
+            }
+            .iw-card-title {
+                font-size: 20px;
+            }
+            .iw-card-desc {
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .iw-section-title {
+                font-size: 30px;
+            }
+            .iw-section-desc {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+            .iw-card {
+                padding: 30px 20px;
+            }
+            .iw-card-icon {
+                width: 60px;
+                height: 60px;
+            }
+            .iw-icon {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="iw-widget-section" dir="rtl">
+    <div class="iw-container">
+        <div class="iw-section-head">
+            <div class="iw-badge">
+                <!-- آیکون SVG book-open - کتاب باز (زیباتر) -->
+                <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+                <span>مرجع معامله‌گران</span>
+            </div>
+            <h2 class="iw-section-title">ایران اِفیکس مرجع کاملی برای معامله‌گران</h2>
+            <p class="iw-section-desc">
+                اپلیکیشن ایران اِفیکس، به عنوان دستیار هوشمند تریدرها، با ارائه ابزارها و امکانات پیشرفته، تجربه‌ای حرفه‌ای از معاملات را برایتان فراهم می‌کند.
+            </p>
+        </div>
+
+        <div class="iw-cards">
+            <!-- آیتم ۱: آموزش جامع - آیکون graduation-cap (کلاه فراغت) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">آموزش جامع</h3>
+                <p class="iw-card-desc">
+                    مجموعه‌ای کامل از دوره‌های آموزشی، مقالات و وبینارهای تخصصی برای ارتقای دانش و مهارت شما
+                </p>
+            </article>
+
+            <!-- آیتم ۲: پشتیبانی ۲۴ ساعته - آیکون headset (هدفون/پشتیبانی) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+                        <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/>
+                        <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">پشتیبانی ۲۴ ساعته</h3>
+                <p class="iw-card-desc">
+                    تیم پشتیبانی ایران اِفیکس به صورت ۲۴ ساعته برای پاسخگویی به سوالات و مشکلات شما در دسترس است
+                </p>
+            </article>
+
+            <!-- آیتم ۳: تحلیل دقیق بازار - آیکون trend-up (روند صعودی) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                        <polyline points="17 6 23 6 23 12"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">تحلیل دقیق بازار</h3>
+                <p class="iw-card-desc">
+                    ارائه سیگنال و تحلیل‌های تخصصی از بازارهای مالی، به شما کمک می‌کند تصمیمات آگاهانه‌تری بگیرید
+                </p>
+            </article>
+
+            <!-- آیتم ۴: ابزارهای معاملاتی - آیکون toolbox (جعبهابزار) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">ابزارهای معاملاتی</h3>
+                <p class="iw-card-desc">
+                    دسترسی به ابزارهای متنوع که تجربه‌ای حرفه‌ای از معامله‌گری را برای شما به ارمغان می‌آورد
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<script>
+    // انیمیشن برای المان‌ها
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeElements = document.querySelectorAll('.iw-fade-in');
+        fadeElements.forEach((el, index) => {
+            el.style.animationDelay = (index * 0.1) + 's';
+        });
+        
+        // اضافه کردن کلیک برای کارت‌ها (اختیاری - برای ردیابی)
+        const cards = document.querySelectorAll('.iw-card');
+        cards.forEach((card, index) => {
+            card.addEventListener('click', function() {
+                const title = this.querySelector('.iw-card-title')?.innerText;
+                if (title) {
+                    console.log('کارت کلیک شد:', title);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ایران افیکس - امکانات ویژه</title>
+    <style>
+        /* ========== ریست و تنظیمات پایه ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'IranSans', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            direction: rtl;
+        }
+
+        /* ========== بخش امکانات ویژه ========== */
+        .iw-widget-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .iw-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .iw-section-head {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .iw-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        .iw-section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1a2a6c;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            background: linear-gradient(to right, #1a2a6c, #2c3e50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .iw-section-desc {
+            font-size: 18px;
+            color: #64748B;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ========== بنر ========== */
+        .iw-banner {
+            margin: 60px 0;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(26, 42, 108, 0.2);
+            border: 3px solid rgba(26, 42, 108, 0.1);
+            transition: all 0.4s ease;
+        }
+        .iw-banner:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 70px rgba(26, 42, 108, 0.3);
+        }
+        .iw-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .iw-banner:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ========== آیتم‌های ویژگی ========== */
+        .iw-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        .iw-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 40px 30px;
+            border: 1px solid rgba(26, 42, 108, 0.1);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: iw-fadeInUp 0.8s ease forwards;
+            min-height: 340px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        @keyframes iw-fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .iw-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #1a2a6c, #ffd700);
+            opacity: 0.7;
+            transition: opacity 0.3s, height 0.3s;
+        }
+        .iw-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(26, 42, 108, 0.15);
+            background: white;
+            border-color: rgba(26, 42, 108, 0.2);
+        }
+        .iw-card:hover::before {
+            opacity: 1;
+            height: 8px;
+        }
+        .iw-card-icon {
+            width: 85px;
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(26, 42, 108, 0.1), rgba(255, 215, 0, 0.08));
+            border-radius: 20px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        .iw-card:hover .iw-card-icon {
+            background: linear-gradient(135deg, rgba(26, 42, 108, 0.15), rgba(255, 215, 0, 0.15));
+            transform: scale(1.05);
+        }
+        /* استایل برای آیکون‌های SVG - هماهنگ با کل سایت */
+        .iw-icon {
+            width: 40px;
+            height: 40px;
+            stroke: #1a2a6c;
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: stroke 0.3s ease;
+        }
+        .iw-card:hover .iw-icon {
+            stroke: #ffd700;
+        }
+        .iw-badge .iw-icon {
+            stroke: #ffd700;
+            width: 18px;
+            height: 18px;
+        }
+        .iw-card-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1a2a6c;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .iw-card-desc {
+            color: #64748B;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* ========== ریسپانسیو ========== */
+        @media (min-width: 1200px) {
+            .iw-cards {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media (max-width: 1199px) and (min-width: 992px) {
+            .iw-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 991px) {
+            .iw-widget-section {
+                padding: 60px 0;
+            }
+            .iw-section-head {
+                margin-bottom: 40px;
+            }
+            .iw-section-title {
+                font-size: 36px;
+            }
+            .iw-badge {
+                font-size: 14px;
+                padding: 6px 20px;
+            }
+            .iw-banner {
+                margin: 40px 0;
+                border-radius: 20px;
+            }
+            .iw-cards {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 40px;
+            }
+            .iw-card {
+                padding: 35px 25px;
+                min-height: 300px;
+            }
+            .iw-card-icon {
+                width: 75px;
+                height: 75px;
+            }
+            .iw-icon {
+                width: 36px;
+                height: 36px;
+            }
+            .iw-card-title {
+                font-size: 22px;
+            }
+            .iw-card-desc {
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .iw-section-title {
+                font-size: 30px;
+            }
+            .iw-section-desc {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+            .iw-card {
+                padding: 30px 20px;
+            }
+            .iw-card-icon {
+                width: 65px;
+                height: 65px;
+            }
+            .iw-icon {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="iw-widget-section" dir="rtl">
+    <div class="iw-container">
+        <div class="iw-section-head">
+            <div class="iw-badge">
+                <!-- آیکون SVG diamond - الماس (امکانات ویژه) -->
+                <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 22 7 22 17 12 22 2 17 2 7 12 2"/>
+                    <line x1="12" y1="2" x2="12" y2="22"/>
+                    <line x1="2" y1="7" x2="22" y2="17"/>
+                    <line x1="2" y1="17" x2="22" y2="7"/>
+                </svg>
+                <span>امکانات ویژه</span>
+            </div>
+            <h2 class="iw-section-title">امکانات ویژه</h2>
+            <p class="iw-section-desc">
+                کتاب‌های آموزشی تا دستیارهای معاملاتی دریافت بهترین کتاب‌های آموزشی بین‌المللی و آزمون‌ها و سوالات.
+            </p>
+        </div>
+
+        <!-- بنر بزرگ -->
+        <div class="iw-banner">
+            <img src="https://iranfxapp.ir/wp-content/uploads/2025/02/iranfx-vip-signal.png" alt="بنر ایران افیکس" loading="lazy">
+        </div>
+
+        <!-- ویژگی‌های اپلیکیشن -->
+        <div class="iw-cards">
+            <!-- آیتم ۱: چارت تحلیل - آیکون chart-line (نمودار خطی) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="3 3 9 9 13 5 21 11"/>
+                        <polyline points="21 3 21 11 13 11"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">چارت تحلیل</h3>
+                <p class="iw-card-desc">
+                    چارت حرفه‌ای مبتنی بر تریدینگ ویو، همیشه در دسترس شما برای تحلیل ارزها.
+                </p>
+            </article>
+
+            <!-- آیتم ۲: اخبار بین‌الملل - آیکون newspaper (روزنامه) اصلاح شده -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2H4z"/>
+                        <line x1="8" y1="6" x2="16" y2="6"/>
+                        <line x1="8" y1="10" x2="16" y2="10"/>
+                        <line x1="8" y1="14" x2="12" y2="14"/>
+                        <line x1="8" y1="18" x2="12" y2="18"/>
+                        <line x1="14" y1="14" x2="16" y2="14"/>
+                        <line x1="14" y1="18" x2="16" y2="18"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">اخبار بین‌الملل</h3>
+                <p class="iw-card-desc">
+                    جدیدترین اخبار اقتصادی تاثیرگذار، به‌صورت لحظه‌ای و دقیق در اختیار شما.
+                </p>
+            </article>
+
+            <!-- آیتم ۳: لایو ترید - آیکون monitor (نمایشگر/تلویزیون) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">لایو ترید</h3>
+                <p class="iw-card-desc">
+                    با اکانت ۱۰,۰۰۰ دلاری در محیط متاتریدر معامله کنید و تجربه کسب نمایید.
+                </p>
+            </article>
+
+            <!-- آیتم ۴: خودشناسی - آیکون brain (مغز/روانشناسی) -->
+            <article class="iw-card iw-fade-in">
+                <div class="iw-card-icon">
+                    <svg class="iw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
+                        <path d="M14.5 2A2.5 2.5 0 0 1 17 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 14.5 2Z"/>
+                    </svg>
+                </div>
+                <h3 class="iw-card-title">خودشناسی</h3>
+                <p class="iw-card-desc">
+                    با تست روانشناسی فردی، میزان ریسک‌پذیری و اضطراب خود را بسنجید.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<script>
+    // انیمیشن برای المان‌ها
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeElements = document.querySelectorAll('.iw-fade-in');
+        fadeElements.forEach((el, index) => {
+            el.style.animationDelay = (index * 0.1) + 's';
+        });
+        
+        // اضافه کردن lazy loading برای تصاویر بنر
+        const bannerImg = document.querySelector('.iw-banner img');
+        if (bannerImg) {
+            bannerImg.setAttribute('loading', 'lazy');
+            
+            // Fallback برای خطای تصویر
+            bannerImg.addEventListener('error', function() {
+                this.style.backgroundColor = '#1a2a6c';
+                this.style.minHeight = '200px';
+                this.alt = 'بنر ایران افیکس - در حال بارگذاری';
+            });
+        }
+        
+        // کلیک روی کارت‌ها برای ردیابی (اختیاری)
+        const cards = document.querySelectorAll('.iw-card');
+        cards.forEach((card, index) => {
+            card.addEventListener('click', function() {
+                const title = this.querySelector('.iw-card-title')?.innerText;
+                if (title) {
+                    console.log('کارت امکانات کلیک شد:', title);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ایران افیکس - ۳ گام آموزشی</title>
+    <style>
+        /* ========== ریست و تنظیمات پایه ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'IranSans', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            direction: rtl;
+        }
+
+        /* ========== بخش ۳ گام آموزشی ========== */
+        .iw-how-features-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .iw-section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .iw-section-head {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .iw-section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        .iw-section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1a2a6c;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            background: linear-gradient(to right, #1a2a6c, #2c3e50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .iw-section-desc {
+            font-size: 18px;
+            color: #64748B;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ========== مراحل ========== */
+        .iw-steps-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+        
+        /* خط اتصال مراحل */
+        .iw-steps-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 80px;
+            right: calc(100% / 6);
+            left: calc(100% / 6);
+            height: 4px;
+            background: linear-gradient(90deg, #1a2a6c, #ffd700);
+            z-index: 1;
+        }
+        
+        .iw-step {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border: 3px solid rgba(26, 42, 108, 0.1);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            max-width: 320px;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: iw-fadeInUp 0.8s ease forwards;
+        }
+        @keyframes iw-fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .iw-step:hover {
+            transform: translateY(-15px);
+            border-color: #1a2a6c;
+            box-shadow: 0 25px 60px rgba(26, 42, 108, 0.15);
+        }
+        
+        .iw-step-icon {
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(26, 42, 108, 0.1), rgba(44, 62, 80, 0.1));
+            border-radius: 20px;
+            margin-bottom: 25px;
+            color: #1a2a6c;
+            filter: drop-shadow(0 10px 20px rgba(26, 42, 108, 0.2));
+        }
+        
+        /* استایل برای آیکون‌های SVG */
+        .iw-step-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .iw-step-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1a2a6c;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .iw-step-description {
+            color: #64748B;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        /* شماره مرحله */
+        .iw-step::after {
+            content: '۱';
+            position: absolute;
+            top: -25px;
+            right: 50%;
+            transform: translateX(50%);
+            background: #1a2a6c;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 900;
+            box-shadow: 0 8px 20px rgba(26, 42, 108, 0.4);
+        }
+        
+        .iw-step:nth-child(2)::after {
+            content: '۲';
+            background: #ffd700;
+            color: #1a2a6c;
+        }
+        
+        .iw-step:nth-child(3)::after {
+            content: '۳';
+            background: #ff8c00;
+            color: white;
+        }
+
+        /* ========== ریسپانسیو ========== */
+        @media (max-width: 992px) {
+            .iw-steps-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 4rem;
+            }
+            
+            .iw-steps-wrapper::before {
+                display: none;
+            }
+            
+            .iw-step {
+                max-width: 400px;
+                min-height: 350px;
+            }
+            
+            .iw-step::after {
+                top: -30px;
+                width: 60px;
+                height: 60px;
+                font-size: 22px;
+            }
+        }
+        @media (max-width: 768px) {
+            .iw-how-features-section {
+                padding: 60px 0;
+            }
+            .iw-section-head {
+                margin-bottom: 40px;
+            }
+            .iw-section-title {
+                font-size: 36px;
+            }
+            .iw-section-badge {
+                font-size: 14px;
+                padding: 6px 20px;
+            }
+            .iw-step {
+                padding: 35px 25px;
+                min-height: 320px;
+            }
+            .iw-step-icon {
+                width: 80px;
+                height: 80px;
+            }
+            .iw-step-icon svg {
+                width: 36px;
+                height: 36px;
+            }
+            .iw-step-title {
+                font-size: 22px;
+            }
+            .iw-step-description {
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .iw-section-title {
+                font-size: 30px;
+            }
+            .iw-section-desc {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+            .iw-step {
+                padding: 30px 20px;
+            }
+            .iw-step-icon {
+                width: 70px;
+                height: 70px;
+            }
+            .iw-step-icon svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section id="how-features" class="iw-how-features-section">
+    <div class="iw-section-container">
+        <div class="iw-section-head">
+            <div class="iw-section-badge">
+                <!-- آیکون SVG cogs -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"/>
+                </svg>
+                سه مرحله ساده
+            </div>
+            <div class="iw-section-title">۳ گام آموزشی</div>
+            <p class="iw-section-desc">
+                انتخاب رشته کنید، آزمون بدید، گواهینامه بگیرید فقط ۳ مرحله تا بازارهای مالی.
+            </p>
+        </div>
+        
+        <div class="iw-steps-wrapper">
+            <!-- Step 1 -->
+            <div class="iw-step iw-fade-in">
+                <div class="iw-step-icon">
+                    <!-- آیکون SVG book -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                    </svg>
+                </div>
+                <h4 class="iw-step-title">انتخاب رشته</h4>
+                <p class="iw-step-description">
+                    رشته بورسی خود را انتخاب کنید و در آن به کسب درآمد برسید (فارکس، کریپتو).
+                </p>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="iw-step iw-fade-in">
+                <div class="iw-step-icon">
+                    <!-- آیکون SVG file-alt -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                </div>
+                <h4 class="iw-step-title">آزمون</h4>
+                <p class="iw-step-description">
+                    آزمون‌های پایان دوره ایران اِفیکس برای تجزیه و تحلیل دانش شما از دوره می‌باشد.
+                </p>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="iw-step iw-fade-in">
+                <div class="iw-step-icon">
+                    <!-- آیکون SVG certificate -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="15" cy="19" r="2"/>
+                        <path d="M20.9 19.8A2 2 0 0 0 22 18V8a2 2 0 0 0-2-2h-4.5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5.8"/>
+                        <path d="M15 2v5h5"/>
+                        <path d="M18 14v.01"/>
+                        <path d="M18 17v.01"/>
+                    </svg>
+                </div>
+                <h4 class="iw-step-title">گواهینامه</h4>
+                <p class="iw-step-description">
+                    در انتها افتخار این را خواهیم داشت که از موفقیت شما تقدیر کنیم.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // انیمیشن برای المان‌ها
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeElements = document.querySelectorAll('.iw-fade-in');
+        fadeElements.forEach((el, index) => {
+            setTimeout(() => {
+                el.style.animationDelay = (index * 0.1) + 's';
+            }, 100);
+        });
+    });
+</script>
+
+</body>
+</html>
+<section class="iw-cta-section">
+    <div class="iw-section-container">
+        <div class="iw-cta-box">
+            <div class="iw-cta-badge">
+                <!-- آیکون SVG trophy -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                    <path d="M4 22h16"/>
+                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+                    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+                </svg>
+                <span>موفقیت شما</span>
+            </div>
+            <h3 class="iw-cta-title">اگر می‌خواهید یک معامله‌گر موفق شوید، حتما به ایران اِفیکس نیاز دارید.</h3>
+            <p class="iw-cta-description">
+                از کتاب‌های آموزشی تا دستیارهای معاملاتی، ایران اِفیکس همه ابزارهای لازم برای موفقیت شما در بازارهای مالی را فراهم می‌کند.
+            </p>
+            <div class="iw-cta-actions">
+                <a href="https://iranfxapp.ir/dlapp/" class="iw-btn iw-btn-primary" target="_blank" aria-label="دانلود اپلیکیشن ایران افیکس">
+                    <!-- آیکون SVG download -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    <span>دانلود اپلیکیشن</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* ========== CTA Section - استایل ایران ویجت ========== */
+    .iw-cta-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    .iw-section-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .iw-cta-box {
+        background: linear-gradient(135deg, #1a2a6c 0%, #2c3e50 100%);
+        border-radius: 24px;
+        padding: 60px 80px;
+        color: white;
+        box-shadow: 0 20px 60px rgba(26, 42, 108, 0.3);
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: iw-ctaFadeIn 1s ease forwards;
+    }
+    
+    @keyframes iw-ctaFadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* افکت دایره‌ای در پس‌زمینه */
+    .iw-cta-box::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -30%;
+        width: 300px;
+        height: 300px;
+        background: rgba(255, 215, 0, 0.1);
+        border-radius: 50%;
+        z-index: 1;
+    }
+    
+    .iw-cta-box::after {
+        content: '';
+        position: absolute;
+        bottom: -40%;
+        left: -20%;
+        width: 250px;
+        height: 250px;
+        background: rgba(255, 215, 0, 0.15);
+        border-radius: 50%;
+        z-index: 1;
+    }
+    
+    .iw-cta-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: white;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 10px 28px;
+        border-radius: 50px;
+        margin-bottom: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        z-index: 2;
+        position: relative;
+        animation: iw-badgePulse 4s infinite;
+    }
+    
+    @keyframes iw-badgePulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+    }
+    
+    /* استایل آیکون SVG در badge */
+    .iw-cta-badge svg {
+        width: 16px;
+        height: 16px;
+        color: #ffd700;
+        stroke: #ffd700;
+    }
+    
+    .iw-cta-title {
+        font-size: 42px;
+        font-weight: 900;
+        margin-bottom: 20px;
+        line-height: 1.4;
+        z-index: 2;
+        position: relative;
+        background: linear-gradient(to right, #ffd700, #ff8c00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    
+    .iw-cta-description {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 40px;
+        opacity: 0.9;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.8;
+        z-index: 2;
+        position: relative;
+        color: rgba(255, 255, 255, 0.85);
+    }
+    
+    /* ========== Buttons ========== */
+    .iw-cta-actions {
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        flex-wrap: wrap;
+        z-index: 2;
+        position: relative;
+    }
+    
+    .iw-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 18px 40px;
+        font-size: 17px;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        min-width: 220px;
+        justify-content: center;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    
+    /* استایل آیکون SVG در دکمه */
+    .iw-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .iw-btn-primary {
+        background: linear-gradient(135deg, #ffd700, #ff8c00);
+        color: #1a2a6c;
+    }
+    
+    .iw-btn-primary:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 35px rgba(255, 215, 0, 0.4);
+        background: linear-gradient(135deg, #ff8c00, #ffd700);
+    }
+    
+    /* ========== Responsive ========== */
+    @media (max-width: 992px) {
+        .iw-cta-box {
+            padding: 50px 40px;
+        }
+        
+        .iw-cta-title {
+            font-size: 36px;
+        }
+        
+        .iw-cta-description {
+            font-size: 17px;
+        }
+        
+        .iw-btn {
+            padding: 16px 35px;
+            min-width: 200px;
+            font-size: 16px;
+        }
+        
+        .iw-btn svg,
+        .iw-cta-badge svg {
+            width: 15px;
+            height: 15px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .iw-cta-section {
+            padding: 60px 0;
+        }
+        
+        .iw-cta-box {
+            padding: 45px 30px;
+            border-radius: 20px;
+        }
+        
+        .iw-cta-title {
+            font-size: 32px;
+        }
+        
+        .iw-cta-actions {
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .iw-btn {
+            width: 100%;
+            max-width: 320px;
+            padding: 16px 30px;
+        }
+        
+        .iw-cta-box::before,
+        .iw-cta-box::after {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .iw-btn svg,
+        .iw-cta-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .iw-cta-box {
+            padding: 40px 20px;
+        }
+        
+        .iw-cta-title {
+            font-size: 28px;
+        }
+        
+        .iw-cta-description {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        .iw-cta-badge {
+            font-size: 14px;
+            padding: 8px 22px;
+        }
+        
+        .iw-btn {
+            padding: 14px 25px;
+            font-size: 15px;
+            min-width: auto;
+        }
+        
+        .iw-btn svg,
+        .iw-cta-badge svg {
+            width: 13px;
+            height: 13px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // افکت دکمه‌ها
+        const buttons = document.querySelectorAll('.iw-btn');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // تابع برای دکمه اصلی
+        const primaryBtn = document.querySelector('.iw-btn-primary');
+        if (primaryBtn) {
+            primaryBtn.addEventListener('click', function(e) {
+                // تغییر موقتی آیکون برای بازخورد بصری
+                const icon = this.querySelector('svg');
+                const originalSVG = icon.innerHTML;
+                
+                // آیکون SVG برای check (تأیید)
+                const checkSVG = `<path d="M20 6 9 17l-5-5"/>`;
+                icon.innerHTML = checkSVG;
+                this.style.filter = 'brightness(1.2)';
+                this.style.transform = 'scale(1.02)';
+                
+                setTimeout(() => {
+                    icon.innerHTML = originalSVG;
+                    this.style.filter = 'none';
+                    this.style.transform = 'translateY(-5px)';
+                }, 1500);
+            });
+        }
+    });
+</script>
+<style>
+    .iw-footer {
+        --primary-dark: #1a2a6c !important;
+        --primary-blue: #2c3e50 !important;
+        --primary-gold: #ffd700 !important;
+        --light-gold: #ff8c00 !important;
+        --text-light: #e2e8f0 !important;
+        --text-lighter: #94a3b8 !important;
+        --text-dark: #0f172a !important;
+        --border-color: rgba(255, 215, 0, 0.2) !important;
+        --card-bg: rgba(255, 255, 255, 0.05) !important;
+        --max-width: 1400px !important;
+        --white: #ffffff !important;
+    }
+    .iw-footer,
+    .iw-footer *,
+    .iw-footer *:before,
+    .iw-footer *:after {
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-family: 'IranSans', sans-serif !important;
+        line-height: 1.6 !important;
+        text-decoration: none !important;
+        list-style: none !important;
+        border: none !important;
+        outline: none !important;
+        background: transparent !important;
+    }
+    .iw-footer {
+        background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%) !important;
+        color: var(--text-light) !important;
+        padding-top: 60px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        border-top: 3px solid var(--primary-gold) !important;
+        width: 100% !important;
+        display: block !important;
+        z-index: 999 !important;
+        min-height: 400px !important;
+    }
+    .iw-footer-container {
+        max-width: var(--max-width) !important;
+        margin: 0 auto !important;
+        padding: 0 20px 40px !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr 1fr !important;
+        gap: 40px !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+    .iw-footer-logo-section {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important;
+        grid-column: 1 / -1 !important;
+        text-align: center !important;
+    }
+    .iw-main-logo {
+        height: 60px !important;
+        width: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+    .iw-footer-links {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        text-align: right !important;
+    }
+    .iw-footer-links h4 {
+        color: var(--white) !important;
+        font-size: 1.2rem !important;
+        margin-bottom: 20px !important;
+        padding-bottom: 10px !important;
+        border-bottom: 2px solid var(--border-color) !important;
+        font-weight: 700 !important;
+        text-align: right !important;
+    }
+    .iw-footer-links ul {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .iw-footer-links ul li {
+        margin-bottom: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+    .iw-footer-links ul li a {
+        color: var(--text-lighter) !important;
+        padding: 8px 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        transition: all 0.3s ease !important;
+        font-weight: 500 !important;
+        text-decoration: none !important;
+        direction: rtl !important;
+    }
+    .iw-footer-links ul li a:hover {
+        color: var(--primary-gold) !important;
+        transform: translateX(5px) !important;
+    }
+    .iw-icon {
+        width: 20px !important;
+        height: 20px !important;
+        stroke: currentColor !important;
+        stroke-width: 2 !important;
+        fill: none !important;
+        stroke-linecap: round !important;
+        stroke-linejoin: round !important;
+        flex-shrink: 0 !important;
+        transition: all 0.3s ease !important;
+    }
+    .iw-footer-links ul li:hover .iw-icon {
+        stroke: var(--primary-gold) !important;
+        transform: scale(1.1) !important;
+    }
+    .iw-social-icons {
+        display: flex !important;
+        gap: 15px !important;
+        margin: 20px 0 !important;
+        justify-content: flex-end !important;
+        flex-wrap: wrap !important;
+    }
+    .iw-social-link {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 48px !important;
+        height: 48px !important;
+        background-color: var(--card-bg) !important;
+        color: var(--white) !important;
+        border-radius: 12px !important;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        border: 1px solid transparent !important;
+        text-decoration: none !important;
+    }
+    .iw-social-link .iw-icon {
+        width: 22px !important;
+        height: 22px !important;
+        stroke: var(--white) !important;
+    }
+    .iw-social-link:hover {
+        color: var(--white) !important;
+        transform: translateY(-5px) scale(1.05) !important;
+        border-color: var(--primary-gold) !important;
+    }
+    .iw-social-link:hover .iw-icon {
+        stroke: var(--white) !important;
+    }
+    .iw-social-link.email:hover { background: linear-gradient(135deg, #EA4335, #D14836) !important; border-color: #EA4335 !important; }
+    .iw-social-link.whatsapp:hover { background: linear-gradient(135deg, #25D366, #128C7E) !important; border-color: #25D366 !important; }
+    .iw-social-link.telegram:hover { background: linear-gradient(135deg, #0088cc, #005580) !important; border-color: #0088cc !important; }
+    .iw-social-link.instagram:hover { background: linear-gradient(135deg, #E1306C, #C13584, #833AB4, #5851DB) !important; border-color: #E1306C !important; }
+    .iw-social-link.x-twitter:hover { background: linear-gradient(135deg, #000000, #2d2d2d) !important; border-color: #000000 !important; }
+    .iw-trust-partners {
+        margin-top: 40px !important;
+        padding-top: 30px !important;
+        border-top: 1px solid var(--border-color) !important;
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+    }
+    .iw-trust-partners h5 {
+        text-align: center !important;
+        color: var(--text-lighter) !important;
+        font-size: 1rem !important;
+        margin-bottom: 20px !important;
+        font-weight: 500 !important;
+    }
+    .iw-partner-logos {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 25px !important;
+        max-width: 900px !important;
+        margin: 0 auto !important;
+    }
+    .iw-partner-logo-link {
+        display: block !important;
+        height: 60px !important;
+        width: auto !important;
+        max-width: 150px !important;
+    }
+    .iw-partner-logo {
+        height: 100% !important;
+        width: 100% !important;
+        max-width: 150px !important;
+        object-fit: contain !important;
+        filter: grayscale(0.3) brightness(1.2) !important;
+        opacity: 0.9 !important;
+        transition: all 0.3s ease !important;
+        padding: 8px !important;
+        background-color: rgba(255, 255, 255, 0.03) !important;
+        border-radius: 12px !important;
+        border: 1px solid rgba(255,255,255,0.05) !important;
+        display: block !important;
+    }
+    .iw-partner-logo-link:hover .iw-partner-logo {
+        filter: grayscale(0) brightness(1.4) !important;
+        opacity: 1 !important;
+        transform: translateY(-3px) !important;
+        background-color: rgba(255, 255, 255, 0.08) !important;
+        border-color: var(--border-color) !important;
+    }
+    .iw-enamad-badge {
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        border: 1px solid rgba(255,255,255,0.1) !important;
+        transition: all 0.3s ease !important;
+        height: 60px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-decoration: none !important;
+    }
+    .iw-enamad-badge img {
+        height: 60px !important;
+        width: auto !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .iw-enamad-badge:hover {
+        border-color: var(--primary-gold) !important;
+        box-shadow: 0 5px 15px rgba(255, 215, 0, 0.15) !important;
+    }
+    .iw-footer-bottom {
+        background-color: rgba(0, 0, 0, 0.25) !important;
+        padding: 25px 20px !important;
+        text-align: center !important;
+        color: var(--text-lighter) !important;
+        font-size: 0.9rem !important;
+        position: relative !important;
+        z-index: 2 !important;
+        border-top: 1px solid var(--border-color) !important;
+        width: 100% !important;
+        grid-column: 1 / -1 !important;
+        margin-top: 40px !important;
+    }
+    .iw-footer-bottom a {
+        color: var(--primary-gold) !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+    }
+    .iw-footer-bottom a:hover {
+        color: var(--white) !important;
+        text-decoration: underline !important;
+    }
+    @media (max-width: 1100px) {
+        .iw-footer-container {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 40px 30px !important;
+        }
+    }
+    @media (max-width: 768px) {
+        .iw-footer-container {
+            grid-template-columns: 1fr !important;
+            gap: 35px !important;
+            padding-bottom: 30px !important;
+        }
+        .iw-footer-links {
+            text-align: center !important;
+        }
+        .iw-footer-links h4 {
+            text-align: center !important;
+        }
+        .iw-footer-links ul li {
+            justify-content: center !important;
+        }
+        .iw-footer-links ul li a {
+            justify-content: center !important;
+            text-align: center !important;
+        }
+        .iw-social-icons {
+            justify-content: center !important;
+        }
+    }
+    @media (max-width: 480px) {
+        .iw-footer-container {
+            padding: 0 15px 25px !important;
+        }
+        .iw-main-logo {
+            height: 50px !important;
+        }
+        .iw-partner-logos {
+            gap: 12px !important;
+        }
+        .iw-partner-logo-link {
+            height: 50px !important;
+        }
+        .iw-partner-logo {
+            border-radius: 8px !important;
+        }
+        .iw-enamad-badge {
+            height: 50px !important;
+        }
+        .iw-enamad-badge img {
+            height: 50px !important;
+        }
+        .iw-footer-bottom {
+            padding: 20px 15px !important;
+            font-size: 0.85rem !important;
+        }
+    }
+</style>
+
+<footer class="iw-footer">
+    <div class="iw-footer-container">
+        <div class="iw-footer-logo-section">
+            <img src="https://iranfxapp.ir/wp-content/uploads/2025/11/icon-header.png" alt="ایران افیکس" class="iw-main-logo" loading="lazy" />
+        </div>
+        <div class="iw-footer-links">
+            <h4>دسته‌بندی‌ها</h4>
+            <ul>
+                <li>
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <a href="https://iranfxapp.ir/dlapp/">دانلود اپلیکیشن</a>
+                </li>
+                <li>
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    <a href="https://iranfxapp.ir/akhabar-forex-arzdigital/">اخبار</a>
+                </li>
+                <li>
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <a href="https://iranfxapp.ir/economic/">تقویم اقتصادی</a>
+                </li>
+                <li>
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 3 9 9 13 5 21 11"/><polyline points="21 3 21 11 13 11"/></svg>
+                    <a href="https://iranfxapp.ir/chart/">چارت تحلیل</a>
+                </li>
+                <li>
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><circle cx="12" cy="16" r="1" fill="currentColor" stroke="none"/></svg>
+                    <a href="https://iranfxapp.ir/analysis/">سیگنال و تحلیل</a>
+                </li>
+                <li>
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <a href="https://iranfxapp.ir/shop2/">فروشگاه</a>
+                </li>
+            </ul>
+        </div>
+        <div class="iw-footer-links">
+            <h4>دانلود اپلیکیشن</h4>
+            <ul>
+                <li>
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    <a href="https://myket.ir/app/iran.fx.app">دریافت از مایکت</a>
+                </li>
+                <li>
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    <a href="https://iapps.ir/app/iran-fx/733689256">دریافت از آی‌اپس</a>
+                </li>
+                <li>
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <a href="https://app.puzzley.net/uploads/user/5VoB/DL/iran.fx.app.zip">دریافت نسخه APK</a>
+                </li>
+                <li>
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    <a href="https://dll.iranfxapp.ir/file/app/Iranfx-windows.zip">دریافت نسخه دسکتاپ</a>
+                </li>
+            </ul>
+        </div>
+        <div class="iw-footer-links">
+            <h4>ابزارها</h4>
+            <ul>
+                <li>
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    <a href="https://iranfxapp.ir/jason-converter/">تبدیل جیسون</a>
+                </li>
+                <li>
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <a href="https://iranfxapp.ir/applysession/">تایید دامنه</a>
+                </li>
+            </ul>
+        </div>
+        <div class="iw-footer-links">
+            <h4>شبکه‌های اجتماعی</h4>
+            <div class="iw-social-icons">
+                <a href="https://x.com/Iranfxapp" target="_blank" rel="noopener noreferrer" class="iw-social-link x-twitter" title="X (توییتر)">
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                </a>
+                <a href="https://t.me/iranfxvip" target="_blank" rel="noopener noreferrer" class="iw-social-link telegram" title="تلگرام">
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.2 2.8c-.3-.2-.7-.2-1 0L2.8 10.4c-.3.1-.5.4-.5.7 0 .3.2.6.5.7l3.8 1.4 1.4 4.3c.1.3.4.5.7.5.1 0 .2 0 .3-.1l3.7-2.2 4.1 3.1c.2.2.5.3.8.3.1 0 .2 0 .3-.1.3-.1.5-.4.5-.7V3.5c0-.3-.2-.6-.5-.7zM9.4 13.4l-1.8 5.4 5.4-3.2-3.6-2.2z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/iranfxapp" target="_blank" rel="noopener noreferrer" class="iw-social-link instagram" title="اینستاگرام">
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+                <a href="https://wa.me/989300070999" target="_blank" rel="noopener noreferrer" class="iw-social-link whatsapp" title="واتساپ">
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </a>
+            </div>
+            <h4>پشتیبانی</h4>
+            <ul>
+                <li>
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    <a href="https://iranfxapp.ir/contact-us-iranfx/">پشتیبانی</a>
+                </li>
+                <li>
+                    <svg class="iw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <a href="mailto:info@iranfxapp.ir">ایمیل پشتیبانی</a>
+                </li>
+            </ul>
+        </div>
+        <div class="iw-trust-partners">
+            <h5>همکاری با برترین ارائه‌دهندگان خدمات</h5>
+            <div class="iw-partner-logos">
+                <a href="https://iranfxapp.ir/" class="iw-partner-logo-link">
+                    <img src="https://iranfxapp.ir/wp-content/uploads/2025/11/icon-header.png" alt="ایران افیکس" class="iw-partner-logo" loading="lazy" />
+                </a>
+                <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=507336&amp;Code=FKH8qXeE4aH8tOPMTEI4Kcb8p1iqzONA" class="iw-enamad-badge">
+                    <img referrerpolicy="origin" src="https://trustseal.enamad.ir/logo.aspx?id=507336&amp;Code=FKH8qXeE4aH8tOPMTEI4Kcb8p1iqzONA" alt="نماد اعتماد الکترونیکی" style="cursor: pointer !important; display: block !important;" />
+                </a>
+                
+                <a href="https://payping.ir/" target="_blank" rel="noopener noreferrer" class="iw-partner-logo-link">
+                    <img src="https://iranfxapp.ir/wp-content/uploads/2025/02/paping-iranfx.jpg" alt="پرداخت پی‌پینگ" class="iw-partner-logo" loading="lazy" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="iw-footer-bottom">
+        &copy; ۱۴۰۴ - تمامی حقوق برای <strong>ایران افیکس</strong> محفوظ است. | طراحی و توسعه با عشق برای جامعه معامله‌گران ایران
+    </div>
+</footer>
