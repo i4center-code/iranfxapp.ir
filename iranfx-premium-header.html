@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ایران اِفیکس - هوشمندانه معامله کنید</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #0a0e1a;
+            color: #fff;
+            direction: rtl;
+        }
+
+        /* Header Container */
+        .fx-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: linear-gradient(180deg, rgba(10,14,26,0.98) 0%, rgba(15,23,42,0.95) 100%);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,215,0,0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fx-header.scrolled {
+            background: rgba(10,14,26,0.99);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,215,0,0.05);
+        }
+
+        .fx-header-inner {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Top Row */
+        .fx-top-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            gap: 24px;
+        }
+
+        /* Logo Section - Clean, No Box */
+        .fx-logo-section {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-shrink: 0;
+        }
+
+        .fx-logo-img {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .fx-brand-name {
+            font-size: 20px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 50%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+            text-shadow: 0 0 30px rgba(255,215,0,0.3);
+        }
+
+        .fx-brand-tagline {
+            font-size: 11px;
+            color: rgba(255,255,255,0.6);
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        /* Live Chart Section */
+        .fx-chart-section {
+            flex: 1;
+            max-width: 500px;
+            min-height: 70px;
+            position: relative;
+        }
+
+        .fx-chart-container {
+            width: 100%;
+            height: 70px;
+            position: relative;
+        }
+
+        .fx-chart-info {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            z-index: 10;
+        }
+
+        .fx-chart-symbol {
+            font-size: 13px;
+            font-weight: 700;
+            color: #ffd700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .fx-chart-live-dot {
+            width: 6px;
+            height: 6px;
+            background: #00ff88;
+            border-radius: 50%;
+            animation: fx-pulse 2s infinite;
+        }
+
+        @keyframes fx-pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,255,136,0.7); }
+            50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(0,255,136,0); }
+        }
+
+        .fx-chart-price {
+            font-size: 18px;
+            font-weight: 800;
+            color: #fff;
+            font-variant-numeric: tabular-nums;
+            text-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+
+        .fx-chart-change {
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .fx-chart-change.positive { color: #00ff88; }
+        .fx-chart-change.negative { color: #ff4757; }
+
+        /* Prices Ticker */
+        .fx-prices-ticker {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        .fx-price-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+            padding: 6px 0;
+            cursor: default;
+            transition: all 0.3s ease;
+        }
+
+        .fx-price-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .fx-price-label {
+            font-size: 10px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .fx-price-status {
+            width: 5px;
+            height: 5px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .fx-price-status.active {
+            background: #00ff88;
+            box-shadow: 0 0 8px rgba(0,255,136,0.6);
+        }
+
+        .fx-price-value {
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: -0.3px;
+        }
+
+        .fx-price-currency {
+            font-size: 10px;
+            color: rgba(255,255,255,0.4);
+            font-weight: 400;
+            margin-right: 3px;
+        }
+
+        /* Login Button */
+        .fx-login-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+            color: #0a0e1a;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 10px 22px;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+            box-shadow: 0 4px 20px rgba(255,215,0,0.25);
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fx-login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .fx-login-btn:hover::before {
+            left: 100%;
+        }
+
+        .fx-login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255,215,0,0.4);
+            background: linear-gradient(135deg, #ffe44d 0%, #ffc033 100%);
+        }
+
+        .fx-login-icon {
+            width: 18px;
+            height: 18px;
+            stroke: #0a0e1a;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        /* Navigation Bar */
+        .fx-nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 0 14px 0;
+            gap: 8px;
+        }
+
+        .fx-nav-list {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .fx-nav-item a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .fx-nav-item a::after {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffd700, transparent);
+            transition: transform 0.3s ease;
+        }
+
+        .fx-nav-item a:hover {
+            color: #ffd700;
+            background: rgba(255,215,0,0.05);
+        }
+
+        .fx-nav-item a:hover::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        .fx-nav-icon {
+            width: 16px;
+            height: 16px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .fx-nav-item a:hover .fx-nav-icon {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .fx-chart-section {
+                max-width: 350px;
+            }
+            .fx-prices-ticker {
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fx-header-inner {
+                padding: 0 16px;
+            }
+            .fx-top-row {
+                flex-wrap: wrap;
+                padding: 10px 0;
+                gap: 12px;
+            }
+            .fx-logo-img {
+                height: 36px;
+            }
+            .fx-brand-name {
+                font-size: 17px;
+            }
+            .fx-chart-section {
+                order: 3;
+                max-width: 100%;
+                width: 100%;
+                min-height: 60px;
+            }
+            .fx-chart-container {
+                height: 60px;
+            }
+            .fx-chart-price {
+                font-size: 16px;
+            }
+            .fx-prices-ticker {
+                order: 2;
+                width: 100%;
+                justify-content: center;
+                gap: 20px;
+            }
+            .fx-login-btn {
+                order: 1;
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+            .fx-nav-bar {
+                padding: 0 0 12px 0;
+            }
+            .fx-nav-item a {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fx-prices-ticker {
+                gap: 14px;
+            }
+            .fx-price-value {
+                font-size: 12px;
+            }
+            .fx-nav-item a {
+                padding: 6px 10px;
+                font-size: 11px;
+            }
+            .fx-nav-icon {
+                display: none;
+            }
+        }
+
+        /* Body spacer for fixed header */
+        .fx-body-spacer {
+            height: 140px;
+        }
+
+        @media (max-width: 768px) {
+            .fx-body-spacer {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="fx-header" id="fxHeader">
+        <div class="fx-header-inner">
+            <!-- Top Row: Logo, Chart, Prices, Login -->
+            <div class="fx-top-row">
+                <!-- Logo -->
+                <a href="https://iranfxapp.ir" class="fx-logo-section">
+                    <img src="https://iranfxapp.ir/wp-content/uploads/2025/11/icon-header.png" alt="ایران اِفیکس" class="fx-logo-img">
+                    <div>
+                        <div class="fx-brand-name">ایران اِفیکس</div>
+                        <div class="fx-brand-tagline">هوشمندانه معامله کنید</div>
+                    </div>
+                </a>
+
+                <!-- Live Chart (XAU/USD) -->
+                <div class="fx-chart-section">
+                    <div class="fx-chart-info">
+                        <div class="fx-chart-symbol">
+                            <span class="fx-chart-live-dot"></span>
+                            XAU/USD
+                        </div>
+                        <div class="fx-chart-price" id="fxGoldPrice">---</div>
+                        <div class="fx-chart-change" id="fxGoldChange">--</div>
+                    </div>
+                    <div class="fx-chart-container">
+                        <canvas id="fxGoldChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Prices Ticker -->
+                <div class="fx-prices-ticker">
+                    <div class="fx-price-item">
+                        <span class="fx-price-label"><span class="fx-price-status" id="fxUsdtStatus"></span>تتر</span>
+                        <span class="fx-price-value" id="fxUsdtPrice">---<span class="fx-price-currency">تومان</span></span>
+                    </div>
+                    <div class="fx-price-item">
+                        <span class="fx-price-label"><span class="fx-price-status" id="fxBtcStatus"></span>بیت‌کوین</span>
+                        <span class="fx-price-value" id="fxBtcPrice">---<span class="fx-price-currency">$</span></span>
+                    </div>
+                    <div class="fx-price-item">
+                        <span class="fx-price-label"><span class="fx-price-status" id="fxGoldTickerStatus"></span>طلا</span>
+                        <span class="fx-price-value" id="fxGoldTickerPrice">---<span class="fx-price-currency">تومان</span></span>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <a href="https://web.iranfxapp.ir/" class="fx-login-btn">
+                    <svg class="fx-login-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor"/>
+                        <circle cx="12" cy="7" r="4" stroke="currentColor"/>
+                    </svg>
+                    <span>ورود به پنل</span>
+                </a>
+            </div>
+
+            <!-- Navigation Bar -->
+            <nav class="fx-nav-bar">
+                <ul class="fx-nav-list">
+                    <li class="fx-nav-item">
+                        <a href="https://iranfxapp.ir">
+                            <svg class="fx-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                            صفحه اصلی
+                        </a>
+                    </li>
+                    <li class="fx-nav-item">
+                        <a href="https://iranfxapp.ir/dlapp/">
+                            <svg class="fx-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18"/>
+                            </svg>
+                            دانلود اپلیکیشن
+                        </a>
+                    </li>
+                    <li class="fx-nav-item">
+                        <a href="https://iranfxapp.ir/economic/">
+                            <svg class="fx-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                            تقویم اقتصادی
+                        </a>
+                    </li>
+                    <li class="fx-nav-item">
+                        <a href="https://iranfxapp.ir/akhabar-forex-arzdigital/">
+                            <svg class="fx-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                            بلاگ و اخبار
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Spacer for fixed header -->
+    <div class="fx-body-spacer"></div>
+
+    <!-- Sample Content -->
+    <div style="padding: 40px 24px; max-width: 1440px; margin: 0 auto;">
+        <h1 style="font-size: 32px; font-weight: 800; background: linear-gradient(135deg, #ffd700, #ffaa00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px;">به ایران اِفیکس خوش آمدید</h1>
+        <p style="color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 16px;">
+            پلتفرم حرفه‌ای معاملات فارکس و ارز دیجیتال با بهترین ابزارهای تحلیلی و قیمت‌های لحظه‌ای
+        </p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Scroll effect
+            const header = document.getElementById('fxHeader');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Persian number converter
+            function toPersianNum(num) {
+                const p = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+                return num.toString().replace(/\d/g, d => p[d]);
+            }
+
+            // Format functions
+            function formatToman(rial) {
+                const t = Math.floor(rial / 10);
+                return toPersianNum(t.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+            }
+
+            function formatDollar(usd) {
+                return toPersianNum(parseFloat(usd).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+            }
+
+            function formatGoldPrice(price) {
+                return toPersianNum(parseFloat(price).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+            }
+
+            // Chart.js setup for XAU/USD
+            const ctx = document.getElementById('fxGoldChart').getContext('2d');
+            const goldChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'XAU/USD',
+                        data: [],
+                        borderColor: '#ffd700',
+                        backgroundColor: 'rgba(255,215,0,0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 0,
+                        pointHoverRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: false }
+                    },
+                    scales: {
+                        x: { display: false },
+                        y: { 
+                            display: false,
+                            min: 0,
+                            max: 3000
+                        }
+                    },
+                    animation: {
+                        duration: 500,
+                        easing: 'easeOutQuart'
+                    },
+                    interaction: { intersect: false }
+                }
+            });
+
+            // Price data storage
+            let priceCache = { usdt: null, btc: null, gold: null, timestamp: 0 };
+            const CACHE_DURATION = 30000;
+            let goldPrices = [];
+            let goldLabels = [];
+            let previousGoldPrice = null;
+
+            // Update UI elements
+            function updateUI() {
+                if (priceCache.usdt) {
+                    document.getElementById('fxUsdtPrice').innerHTML = priceCache.usdt + '<span class="fx-price-currency">تومان</span>';
+                    document.getElementById('fxUsdtStatus').classList.add('active');
+                }
+                if (priceCache.btc) {
+                    document.getElementById('fxBtcPrice').innerHTML = priceCache.btc + '<span class="fx-price-currency">$</span>';
+                    document.getElementById('fxBtcStatus').classList.add('active');
+                }
+                if (priceCache.gold) {
+                    document.getElementById('fxGoldTickerPrice').innerHTML = priceCache.gold + '<span class="fx-price-currency">تومان</span>';
+                    document.getElementById('fxGoldTickerStatus').classList.add('active');
+                }
+            }
+
+            // Fetch prices from APIs
+            function fetchAllPrices() {
+                const now = Date.now();
+                
+                // Use cache if valid
+                if (now - priceCache.timestamp < CACHE_DURATION && priceCache.usdt && priceCache.btc && priceCache.gold) {
+                    updateUI();
+                    return;
+                }
+
+                Promise.all([
+                    fetch('https://iranfxapp.ir/proxy/proxy.php?t=' + now)
+                        .then(r => r.json())
+                        .catch(() => null),
+                    fetch('https://iranfxapp.ir/trade-gold/backend/gold-price.php?side=buy&t=' + now)
+                        .then(r => r.json())
+                        .catch(() => null)
+                ]).then(([proxyData, goldData]) => {
+                    // Process USDT and BTC
+                    if (proxyData) {
+                        if (proxyData.USDTIRT && !isNaN(proxyData.USDTIRT) && parseFloat(proxyData.USDTIRT) > 0) {
+                            priceCache.usdt = formatToman(parseFloat(proxyData.USDTIRT));
+                        }
+                        if (proxyData.BTCUSDT && !isNaN(proxyData.BTCUSDT) && parseFloat(proxyData.BTCUSDT) > 0) {
+                            priceCache.btc = formatDollar(parseFloat(proxyData.BTCUSDT));
+                        }
+                    }
+                    
+                    // Process Gold price
+                    if (goldData && goldData.success && goldData.result && goldData.result.price) {
+                        const goldPrice = parseFloat(goldData.result.price);
+                        priceCache.gold = formatGoldPrice(goldPrice);
+                        
+                        // Update chart display
+                        document.getElementById('fxGoldPrice').textContent = '$' + formatGoldPrice(goldPrice / 85000); // Approximate USD conversion
+                        
+                        // Calculate change
+                        if (previousGoldPrice !== null) {
+                            const change = ((goldPrice - previousGoldPrice) / previousGoldPrice) * 100;
+                            const changeEl = document.getElementById('fxGoldChange');
+                            if (change >= 0) {
+                                changeEl.textContent = '+' + toPersianNum(change.toFixed(2)) + '%';
+                                changeEl.className = 'fx-chart-change positive';
+                            } else {
+                                changeEl.textContent = toPersianNum(change.toFixed(2)) + '%';
+                                changeEl.className = 'fx-chart-change negative';
+                            }
+                        }
+                        previousGoldPrice = goldPrice;
+                        
+                        // Update chart data
+                        const timeLabel = new Date().toLocaleTimeString('fa-IR', { hour: '2-digit', minute: '2-digit' });
+                        goldLabels.push(timeLabel);
+                        goldPrices.push(goldPrice);
+                        
+                        // Keep only last 20 points
+                        if (goldLabels.length > 20) {
+                            goldLabels.shift();
+                            goldPrices.shift();
+                        }
+                        
+                        goldChart.data.labels = goldLabels;
+                        goldChart.data.datasets[0].data = goldPrices;
+                        
+                        // Auto-scale Y axis
+                        const minPrice = Math.min(...goldPrices) * 0.999;
+                        const maxPrice = Math.max(...goldPrices) * 1.001;
+                        goldChart.options.scales.y.min = minPrice;
+                        goldChart.options.scales.y.max = maxPrice;
+                        
+                        goldChart.update('none'); // Smooth update without full animation
+                    }
+                    
+                    priceCache.timestamp = now;
+                    updateUI();
+                }).catch(err => {
+                    console.log('Error fetching prices:', err);
+                });
+            }
+
+            // Initial fetch and interval
+            fetchAllPrices();
+            setInterval(fetchAllPrices, 5000); // Update every 5 seconds
+            updateUI();
+        });
+    </script>
+</body>
+</html>
