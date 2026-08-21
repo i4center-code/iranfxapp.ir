@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IranFX - هدر حرفه‌ای فارکس</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 200vh;
+            color: #fff;
+        }
+
+        /* Header Container */
+        .fx-header-wrapper {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fx-header-wrapper.scrolled {
+            background: rgba(15, 23, 42, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Row 1: Brand + Live Ticker + CTA */
+        .fx-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            gap: 20px;
+        }
+
+        /* Brand Section */
+        .fx-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .fx-logo {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
+        }
+
+        .fx-brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fx-brand-name {
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffd700 0%, #ffb700 50%, #ff9500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .fx-brand-tagline {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        /* Live Price Section (Single USDT) */
+        .fx-live-price {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 215, 0, 0.15);
+        }
+
+        .fx-price-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+
+        .fx-price-value {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #fff;
+            font-variant-numeric: tabular-nums;
+            background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .fx-price-currency {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 600;
+            margin-right: 4px;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .fx-status-dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .fx-status-dot.active {
+            background: #10b981;
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
+            animation: fxPulse 2s infinite;
+        }
+
+        @keyframes fxPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+
+        /* CTA Button */
+        .fx-cta-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+            color: #0f172a;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .fx-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .fx-cta-btn:active {
+            transform: translateY(0);
+        }
+
+        .fx-cta-icon {
+            width: 18px;
+            height: 18px;
+            fill: #0f172a;
+        }
+
+        /* Row 2: Navigation Menu */
+        .fx-nav-row {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .fx-nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .fx-nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .fx-nav-item {
+            position: relative;
+        }
+
+        .fx-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 24px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .fx-nav-link:hover {
+            color: #ffd700;
+            background: rgba(255, 215, 0, 0.08);
+        }
+
+        .fx-nav-icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            opacity: 0.8;
+        }
+
+        .fx-nav-link:hover .fx-nav-icon {
+            opacity: 1;
+        }
+
+        /* Row 3: Full Width Chart */
+        .fx-chart-row {
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        .fx-chart-container {
+            width: 100%;
+            height: 280px;
+            position: relative;
+            padding: 20px 24px;
+        }
+
+        .fx-chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 0 4px;
+        }
+
+        .fx-chart-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .fx-chart-badge {
+            background: rgba(255, 215, 0, 0.15);
+            color: #ffd700;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .fx-chart-change {
+            font-size: 0.9rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .fx-chart-change.positive {
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .fx-chart-change.negative {
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .fx-chart-wrapper {
+            width: 100%;
+            height: calc(100% - 50px);
+            position: relative;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .fx-header-top {
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .fx-brand {
+                flex: 1 1 100%;
+                justify-content: center;
+                margin-bottom: 12px;
+            }
+
+            .fx-live-price {
+                order: 1;
+            }
+
+            .fx-cta-btn {
+                order: 2;
+            }
+
+            .fx-chart-container {
+                height: 240px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fx-header-top {
+                padding: 12px 16px;
+            }
+
+            .fx-nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 4px;
+            }
+
+            .fx-nav-link {
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+
+            .fx-chart-container {
+                height: 220px;
+                padding: 15px 16px;
+            }
+
+            .fx-live-price {
+                padding: 8px 16px;
+            }
+
+            .fx-price-value {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fx-brand-name {
+                font-size: 1.3rem;
+            }
+
+            .fx-nav-menu {
+                gap: 2px;
+            }
+
+            .fx-nav-link {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+
+            .fx-chart-container {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="fx-header-wrapper" id="fxHeader">
+    <!-- Row 1: Brand + Live Price + CTA -->
+    <div class="fx-header-top">
+        <!-- Brand -->
+        <a href="/" class="fx-brand">
+            <img src="https://iranfxapp.ir/logo.png" alt="IranFX" class="fx-logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 45 45%22%3E%3Ccircle cx=%2222.5%22 cy=%2222.5%22 r=%2220%22 fill=%22%23ffd700%22/%3E%3Ctext x=%2222.5%22 y=%2228%22 font-size=%2220%22 font-weight=%22bold%22 fill=%22%230f172a%22 text-anchor=%22middle%22%3EIFX%3C/text%3E%3C/svg%3E'">
+            <div class="fx-brand-text">
+                <span class="fx-brand-name">ایران افیکس</span>
+                <span class="fx-brand-tagline">پلتفرم حرفه‌ای معاملات فارکس</span>
+            </div>
+        </a>
+
+        <!-- Live USDT Price -->
+        <div class="fx-live-price">
+            <span class="fx-price-label">تتر (USDT)</span>
+            <span class="fx-price-value" id="fxUsdtPrice">---</span>
+            <span class="fx-price-currency">تومان</span>
+            <div class="fx-status-dot" id="fxUsdtStatus"></div>
+        </div>
+
+        <!-- CTA Button -->
+        <a href="/login" class="fx-cta-btn">
+            <svg class="fx-cta-icon" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            ورود به حساب
+        </a>
+    </div>
+
+    <!-- Row 2: Navigation Menu -->
+    <nav class="fx-nav-row">
+        <div class="fx-nav-container">
+            <ul class="fx-nav-menu">
+                <li class="fx-nav-item">
+                    <a href="/" class="fx-nav-link">
+                        <svg class="fx-nav-icon" viewBox="0 0 24 24">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                        صفحه اصلی
+                    </a>
+                </li>
+                <li class="fx-nav-item">
+                    <a href="/download" class="fx-nav-link">
+                        <svg class="fx-nav-icon" viewBox="0 0 24 24">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                        </svg>
+                        دانلود اپلیکیشن
+                    </a>
+                </li>
+                <li class="fx-nav-item">
+                    <a href="/calendar" class="fx-nav-link">
+                        <svg class="fx-nav-icon" viewBox="0 0 24 24">
+                            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2.01.89-2.01 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                        </svg>
+                        تقویم اقتصادی
+                    </a>
+                </li>
+                <li class="fx-nav-item">
+                    <a href="/blog" class="fx-nav-link">
+                        <svg class="fx-nav-icon" viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                        بلاگ
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Row 3: Full Width USDT Chart -->
+    <div class="fx-chart-row">
+        <div class="fx-chart-container">
+            <div class="fx-chart-header">
+                <div class="fx-chart-title">
+                    <span>نمودار زنده تتر (USDT/IRT)</span>
+                    <span class="fx-chart-badge">زنده</span>
+                </div>
+                <div class="fx-chart-change" id="fxUsdtChange">--%</div>
+            </div>
+            <div class="fx-chart-wrapper">
+                <canvas id="fxUsdtChart"></canvas>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Scroll effect
+        const header = document.getElementById('fxHeader');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Persian number converter
+        function toPersianNum(num) {
+            const p = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+            return num.toString().replace(/\d/g, d => p[d]);
+        }
+
+        // Format functions
+        function formatToman(rial) {
+            const t = Math.floor(rial / 10);
+            return toPersianNum(t.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+        }
+
+        // Chart.js setup for USDT/IRT
+        const ctx = document.getElementById('fxUsdtChart').getContext('2d');
+        const usdtChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'USDT/IRT',
+                    data: [],
+                    borderColor: '#ffd700',
+                    backgroundColor: 'rgba(255,215,0,0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 0,
+                    pointHoverRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: false }
+                },
+                scales: {
+                    x: { display: false },
+                    y: { 
+                        display: false,
+                        min: 0,
+                        max: 1000000
+                    }
+                },
+                animation: {
+                    duration: 500,
+                    easing: 'easeOutQuart'
+                },
+                interaction: { intersect: false }
+            }
+        });
+
+        // Price data storage
+        let priceCache = { usdt: null, timestamp: 0 };
+        const CACHE_DURATION = 30000;
+        let usdtPrices = [];
+        let usdtLabels = [];
+        let previousUsdtPrice = null;
+
+        // Update UI elements
+        function updateUI() {
+            if (priceCache.usdt) {
+                document.getElementById('fxUsdtPrice').innerHTML = priceCache.usdt + '<span class="fx-price-currency">تومان</span>';
+                document.getElementById('fxUsdtStatus').classList.add('active');
+            }
+        }
+
+        // Fetch prices from APIs
+        function fetchAllPrices() {
+            const now = Date.now();
+            
+            // Use cache if valid
+            if (now - priceCache.timestamp < CACHE_DURATION && priceCache.usdt) {
+                updateUI();
+                return;
+            }
+
+            fetch('https://iranfxapp.ir/proxy/proxy.php?t=' + now)
+                .then(r => r.json())
+                .then(proxyData => {
+                    // Process USDT
+                    if (proxyData && proxyData.USDTIRT && !isNaN(proxyData.USDTIRT) && parseFloat(proxyData.USDTIRT) > 0) {
+                        const usdtPrice = parseFloat(proxyData.USDTIRT);
+                        priceCache.usdt = formatToman(usdtPrice);
+                        
+                        // Calculate change
+                        if (previousUsdtPrice !== null) {
+                            const change = ((usdtPrice - previousUsdtPrice) / previousUsdtPrice) * 100;
+                            const changeEl = document.getElementById('fxUsdtChange');
+                            if (change >= 0) {
+                                changeEl.textContent = '+' + toPersianNum(change.toFixed(2)) + '%';
+                                changeEl.className = 'fx-chart-change positive';
+                            } else {
+                                changeEl.textContent = toPersianNum(change.toFixed(2)) + '%';
+                                changeEl.className = 'fx-chart-change negative';
+                            }
+                        }
+                        previousUsdtPrice = usdtPrice;
+                        
+                        // Update chart data
+                        const timeLabel = new Date().toLocaleTimeString('fa-IR', { hour: '2-digit', minute: '2-digit' });
+                        usdtLabels.push(timeLabel);
+                        usdtPrices.push(usdtPrice);
+                        
+                        // Keep only last 30 points
+                        if (usdtLabels.length > 30) {
+                            usdtLabels.shift();
+                            usdtPrices.shift();
+                        }
+                        
+                        usdtChart.data.labels = usdtLabels;
+                        usdtChart.data.datasets[0].data = usdtPrices;
+                        
+                        // Auto-scale Y axis
+                        const minPrice = Math.min(...usdtPrices) * 0.999;
+                        const maxPrice = Math.max(...usdtPrices) * 1.001;
+                        usdtChart.options.scales.y.min = minPrice;
+                        usdtChart.options.scales.y.max = maxPrice;
+                        
+                        usdtChart.update('none');
+                    }
+                    
+                    priceCache.timestamp = now;
+                    updateUI();
+                })
+                .catch(err => {
+                    console.log('Error fetching USDT price:', err);
+                });
+        }
+
+        // Initial fetch and interval
+        fetchAllPrices();
+        setInterval(fetchAllPrices, 5000);
+        updateUI();
+    });
+</script>
+
+</body>
+</html>
