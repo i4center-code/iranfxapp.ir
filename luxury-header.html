@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ایران اِفیکس - هوشمندانه معامله کنید</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdan/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            direction: rtl;
+        }
+
+        /* ================================
+           Luxury Header Styles
+           ================================ */
+        .lux-header-wrapper {
+            position: relative;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .lux-primary-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, rgba(26, 42, 108, 0.98) 0%, rgba(44, 62, 80, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .lux-primary-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 215, 0, 0.03) 50%, 
+                transparent 100%);
+            pointer-events: none;
+        }
+
+        .lux-primary-header.lux-scrolled {
+            background: linear-gradient(135deg, rgba(26, 42, 108, 0.99) 0%, rgba(44, 62, 80, 0.98) 100%);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .lux-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 30px;
+            max-width: 1600px;
+            margin: 0 auto;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .lux-brand-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+            color: white;
+            flex-shrink: 0;
+            position: relative;
+            padding: 8px 16px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .lux-brand-section:hover {
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        .lux-logo-container {
+            position: relative;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.1));
+            border-radius: 14px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .lux-logo-container::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            animation: lux-shimmer 3s infinite;
+        }
+
+        @keyframes lux-shimmer {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .lux-logo-image {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 2px 8px rgba(255, 215, 0, 0.3));
+        }
+
+        .lux-brand-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .lux-brand-title {
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffec8b 50%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+            position: relative;
+        }
+
+        .lux-brand-subtitle {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* ================================
+           Live Prices Section - Enhanced
+           ================================ */
+        .lux-prices-section {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .lux-price-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            border-radius: 16px;
+            padding: 10px 18px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .lux-price-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lux-price-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .lux-price-card:hover::before {
+            opacity: 1;
+        }
+
+        .lux-price-indicator {
+            position: relative;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #27ae60;
+            box-shadow: 0 0 15px rgba(39, 174, 96, 0.6);
+            animation: lux-pulse 2s infinite;
+            z-index: 1;
+        }
+
+        @keyframes lux-pulse {
+            0%, 100% { 
+                box-shadow: 0 0 15px rgba(39, 174, 96, 0.6);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 25px rgba(39, 174, 96, 0.8);
+                transform: scale(1.1);
+            }
+        }
+
+        .lux-price-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lux-price-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .lux-price-value {
+            color: #facc15;
+            font-weight: 800;
+            font-size: 14px;
+            text-shadow: 0 0 10px rgba(250, 204, 21, 0.3);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ================================
+           CTA Button - Premium Style
+           ================================ */
+        .lux-login-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            color: #1a2a6c !important;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 800;
+            padding: 12px 28px;
+            border-radius: 30px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4), 
+                        0 0 0 0 rgba(255, 215, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+            letter-spacing: -0.5px;
+        }
+
+        .lux-login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .lux-login-btn:hover::before {
+            left: 100%;
+        }
+
+        .lux-login-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5),
+                        0 0 30px rgba(255, 215, 0, 0.3);
+            background: linear-gradient(135deg, #ffe44d 0%, #ffa333 100%);
+        }
+
+        .lux-login-btn:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        .lux-btn-icon {
+            width: 20px;
+            height: 20px;
+            stroke: #1a2a6c;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+            transition: transform 0.3s ease;
+        }
+
+        .lux-login-btn:hover .lux-btn-icon {
+            transform: translateX(-3px);
+        }
+
+        /* ================================
+           Navigation - Modern & Clean
+           ================================ */
+        .lux-nav-section {
+            padding: 10px 30px;
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .lux-primary-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .lux-primary-nav li a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lux-primary-nav li a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 16px;
+        }
+
+        .lux-primary-nav li a:hover::before {
+            opacity: 1;
+        }
+
+        .lux-primary-nav li a:hover {
+            color: #ffd700;
+            transform: translateY(-2px);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .lux-nav-icon {
+            width: 18px;
+            height: 18px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .lux-primary-nav li a:hover .lux-nav-icon {
+            opacity: 1;
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+        }
+
+        /* ================================
+           Responsive Design
+           ================================ */
+        @media (max-width: 1024px) {
+            .lux-header-top {
+                padding: 10px 20px;
+                gap: 15px;
+            }
+
+            .lux-brand-title {
+                font-size: 22px;
+            }
+
+            .lux-logo-container {
+                width: 45px;
+                height: 45px;
+            }
+
+            .lux-logo-image {
+                width: 32px;
+                height: 32px;
+            }
+
+            .lux-price-card {
+                padding: 8px 14px;
+                gap: 8px;
+            }
+
+            .lux-price-value {
+                font-size: 12px;
+            }
+
+            .lux-login-btn {
+                padding: 10px 22px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .lux-header-top {
+                padding: 10px 15px;
+                justify-content: center;
+            }
+
+            .lux-brand-section {
+                order: 1;
+            }
+
+            .lux-prices-section {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+                flex-wrap: wrap;
+            }
+
+            .lux-login-btn {
+                order: 2;
+            }
+
+            .lux-brand-title {
+                font-size: 20px;
+            }
+
+            .lux-brand-subtitle {
+                font-size: 11px;
+            }
+
+            .lux-logo-container {
+                width: 40px;
+                height: 40px;
+            }
+
+            .lux-logo-image {
+                width: 28px;
+                height: 28px;
+            }
+
+            .lux-price-card {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+
+            .lux-price-value {
+                font-size: 11px;
+            }
+
+            .lux-nav-section {
+                padding: 8px 15px;
+            }
+
+            .lux-primary-nav {
+                gap: 4px;
+                padding: 4px;
+            }
+
+            .lux-primary-nav li a {
+                font-size: 13px;
+                padding: 8px 14px;
+            }
+
+            .lux-login-btn {
+                font-size: 13px;
+                padding: 8px 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .lux-brand-title {
+                font-size: 18px;
+            }
+
+            .lux-primary-nav li a {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+
+            .lux-price-card {
+                padding: 5px 10px;
+            }
+        }
+
+        /* ================================
+           Animations
+           ================================ */
+        @keyframes lux-fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .lux-primary-header {
+            animation: lux-fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="lux-header-wrapper">
+        <header class="lux-primary-header">
+            <div class="lux-header-top">
+                <!-- Brand Section -->
+                <a href="https://iranfxapp.ir" class="lux-brand-section">
+                    <div class="lux-logo-container">
+                        <img src="https://iranfxapp.ir/wp-content/uploads/2025/11/icon-header.png" alt="ایران اِفیکس" class="lux-logo-image">
+                    </div>
+                    <div class="lux-brand-info">
+                        <span class="lux-brand-title">ایران اِفیکس</span>
+                        <span class="lux-brand-subtitle">هوشمندانه معامله کنید</span>
+                    </div>
+                </a>
+
+                <!-- Live Prices Section -->
+                <div class="lux-prices-section">
+                    <div class="lux-price-card">
+                        <div class="lux-price-indicator" id="lux-usdt-dot"></div>
+                        <div class="lux-price-info">
+                            <span class="lux-price-label">تتر</span>
+                            <span class="lux-price-value" id="lux-usdt-price">---</span>
+                        </div>
+                    </div>
+                    <div class="lux-price-card">
+                        <div class="lux-price-indicator" id="lux-btc-dot"></div>
+                        <div class="lux-price-info">
+                            <span class="lux-price-label">بیت‌کوین</span>
+                            <span class="lux-price-value" id="lux-btc-price">---</span>
+                        </div>
+                    </div>
+                    <div class="lux-price-card">
+                        <div class="lux-price-indicator" id="lux-gold-dot"></div>
+                        <div class="lux-price-info">
+                            <span class="lux-price-label">طلا (گرم)</span>
+                            <span class="lux-price-value" id="lux-gold-price">---</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <a href="https://web.iranfxapp.ir/" class="lux-login-btn">
+                    <svg class="lux-btn-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span>ورود به ایران افیکس</span>
+                </a>
+            </div>
+
+            <!-- Navigation Section -->
+            <div class="lux-nav-section">
+                <nav>
+                    <ul class="lux-primary-nav">
+                        <li>
+                            <a href="https://iranfxapp.ir">
+                                <svg class="lux-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                                صفحه اصلی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://iranfxapp.ir/dlapp/">
+                                <svg class="lux-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                                دانلود اپلیکیشن
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://iranfxapp.ir/economic/">
+                                <svg class="lux-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="16" y1="2" x2="16" y2="6"/>
+                                    <line x1="8" y1="2" x2="8" y2="6"/>
+                                    <line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                                تقویم اقتصادی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://iranfxapp.ir/akhabar-forex-arzdigital/">
+                                <svg class="lux-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                    <polyline points="10 9 9 9 8 9"/>
+                                </svg>
+                                بلاگ
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <!-- Spacer for fixed header -->
+    <div style="height: 140px;"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Scroll effect
+            const header = document.querySelector('.lux-primary-header');
+            let lastScroll = 0;
+            
+            window.addEventListener('scroll', function() {
+                const currentScroll = window.scrollY;
+                
+                if (currentScroll > 50) {
+                    header.classList.add('lux-scrolled');
+                } else {
+                    header.classList.remove('lux-scrolled');
+                }
+                
+                lastScroll = currentScroll;
+            });
+
+            // Price elements
+            const usdtEl = document.getElementById('lux-usdt-price');
+            const btcEl = document.getElementById('lux-btc-price');
+            const goldEl = document.getElementById('lux-gold-price');
+            const usdtDot = document.getElementById('lux-usdt-dot');
+            const btcDot = document.getElementById('lux-btc-dot');
+            const goldDot = document.getElementById('lux-gold-dot');
+
+            // Persian number converter
+            function toPersianNum(num) {
+                const p = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+                return num.toString().replace(/\d/g, d => p[d]);
+            }
+
+            // Format functions
+            function formatToman(rial) {
+                const t = Math.floor(rial / 10);
+                return toPersianNum(t.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")) + " تومان";
+            }
+
+            function formatDollar(usd) {
+                return toPersianNum(parseFloat(usd).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")) + " دلار";
+            }
+
+            function formatGold(price) {
+                return toPersianNum(parseInt(price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")) + " تومان";
+            }
+
+            // Cache system
+            let cache = { usdt: null, btc: null, gold: null, timestamp: 0 };
+            const CACHE_DURATION = 30000;
+
+            // Update UI
+            function updateUI() {
+                if (cache.usdt) {
+                    usdtEl.textContent = cache.usdt;
+                    usdtDot.style.backgroundColor = '#27ae60';
+                    usdtDot.style.boxShadow = '0 0 15px rgba(39, 174, 96, 0.6)';
+                }
+                if (cache.btc) {
+                    btcEl.textContent = cache.btc;
+                    btcDot.style.backgroundColor = '#27ae60';
+                    btcDot.style.boxShadow = '0 0 15px rgba(39, 174, 96, 0.6)';
+                }
+                if (cache.gold) {
+                    goldEl.textContent = cache.gold;
+                    goldDot.style.backgroundColor = '#27ae60';
+                    goldDot.style.boxShadow = '0 0 15px rgba(39, 174, 96, 0.6)';
+                }
+            }
+
+            // Fetch prices
+            function fetchAllPrices() {
+                const now = Date.now();
+                
+                // Use cache if valid
+                if (now - cache.timestamp < CACHE_DURATION && cache.usdt && cache.btc && cache.gold) {
+                    updateUI();
+                    return;
+                }
+
+                Promise.all([
+                    fetch('https://iranfxapp.ir/proxy/proxy.php?t=' + now).then(r => r.json()).catch(() => null),
+                    fetch('https://iranfxapp.ir/trade-gold/backend/gold-price.php?side=buy&t=' + now).then(r => r.json()).catch(() => null)
+                ]).then(([proxyData, goldData]) => {
+                    if (proxyData) {
+                        if (proxyData.USDTIRT && !isNaN(proxyData.USDTIRT) && parseFloat(proxyData.USDTIRT) > 0) {
+                            cache.usdt = formatToman(parseFloat(proxyData.USDTIRT));
+                        }
+                        if (proxyData.BTCUSDT && !isNaN(proxyData.BTCUSDT) && parseFloat(proxyData.BTCUSDT) > 0) {
+                            cache.btc = formatDollar(parseFloat(proxyData.BTCUSDT));
+                        }
+                    }
+                    if (goldData && goldData.success) {
+                        cache.gold = formatGold(goldData.result.price);
+                    }
+                    cache.timestamp = now;
+                    updateUI();
+                }).catch(err => {
+                    console.log('Price fetch error:', err);
+                });
+            }
+
+            // Initial fetch and interval
+            fetchAllPrices();
+            setInterval(fetchAllPrices, 30000);
+            updateUI();
+        });
+    </script>
+</body>
+</html>
